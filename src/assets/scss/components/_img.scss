@@ -10,18 +10,18 @@
     }
 
     &.-icon {
-        @include width("md");
-        @include height("md");
+        @include width("6");
+        @include height("6");
     }
 
     &.-logo {
-        @include width("lg");
-        @include height("lg");
+        @include width("8");
+        @include height("8");
     }
 
     &.-thumbnail {
-        @include width("sm");
-        @include height("sm");
+        @include width("4");
+        @include height("4");
     }
 
     &.-product {
@@ -30,8 +30,8 @@
     }
 
     &.-avatar {
-        @include width("md");
-        @include height("md");
+        @include width("6");
+        @include height("6");
         @include shape("full");
     }
 

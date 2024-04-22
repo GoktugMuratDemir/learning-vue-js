@@ -6,7 +6,7 @@ import ProductCardInfoUiDesign from "../pages/ProductCardInfoUiDesign.vue";
 const routes = [
   {
     path: "/",
-    name: "PageOne",
+    name: "ProductCardInfoUiDesign",
     component: ProductCardInfoUiDesign,
   },
   {
@@ -20,4 +20,5 @@ const router = createRouter({
   history: createWebHistory("/"),
   routes,
 });
+
 export default router;

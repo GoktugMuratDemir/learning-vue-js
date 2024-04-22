@@ -6,16 +6,16 @@
 
         &-item {
             display: inline-block;
-            @include m("r", "sm");
-            @include p("x", "sm");
-            @include p("y", "xs");
+            @include m("r", "5");
+            @include p("x", "4");
+            @include p("y", "2");
             color : map-get($colors-product-info-ui, "dark");
             @include bg("white");
-            @include shape("md");
+            @include shape("6");
             font-weight: map-get($font-weight, "medium");
             text-decoration: none;
             transition: color 0.3s, background-color 0.3s;
-            @include boxShadow(0, 0, 10px, 0, rgba(0,0,0,0.1));
+            @include boxShadow(0, 0, map-get($sizes, "2"), 0, rgba(0,0,0,0.1));
 
             &:hover {
                 color : map-get($colors-product-info-ui, "primary");

@@ -1,9 +1,9 @@
 .btn {
   @include width("full");
   @include flex(row, nowrap, center, center);
-  @include gap("xs");
-  @include shape("sm");
-  @include p("all", "sm");
+  @include gap("2");
+  @include shape("4");
+  @include p("all", "4");
   font-size: map-get($font-sizes, "sm");
   font-weight: map-get($font-weight, "bold");
   font-family: $font-primary;
@@ -11,7 +11,7 @@
 
   @include breakpoint("mobile") {
     font-size: map-get($font-sizes, "xs");
-    @include p("all", "xs");
+    @include p("all", "2");
   }
 
   &.-outlined {
@@ -36,7 +36,7 @@
     @each $color, $value in $colors-product-info-ui {
       &.-#{$color} {
         background-color: $value;
-        box-shadow: 0 map-get($sizes, "xs") 0 0 darken($value, 20%);
+        box-shadow: 0 map-get($sizes, "2") 0 0 darken($value, 20%);
         color: if(
           $color == "light" or $color == "white",
           map-get($colors-product-info-ui, "dark"),

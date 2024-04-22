@@ -13,7 +13,7 @@ h5,
 h6 {
     font-family: $font-primary;
     color: map-get($colors-product-info-ui, "primary");
-    margin-bottom: map-get($sizes, "md");
+    margin-bottom: map-get($sizes, "6");
 }
 
 h1 {
@@ -29,7 +29,7 @@ h3 {
 }
 
 p {
-    margin-bottom: map-get($sizes, "md");
+    margin-bottom: map-get($sizes, "6");
 }
 
 a {
