@@ -1,0 +1,11 @@
+@mixin font-size($index) {
+    font-size: map-get($font-sizes, $index);
+}
+
+@mixin font-family($index) {
+    font-family: map-get($font-family, $index);
+}
+
+@mixin font-weight($index) {
+    font-weight: map-get($font-weight, $index);
+}

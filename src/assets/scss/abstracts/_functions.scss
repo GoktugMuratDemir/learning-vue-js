@@ -1,0 +1,17 @@
+// Renk tonu ayarlama fonksiyonu
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+// Renk gölgeleme fonksiyonu
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+// Birim dönüştürme fonksiyonu
+@function convert-to-rem($size) {
+  @return $size / 16 * 1rem;
+}
+
+
+

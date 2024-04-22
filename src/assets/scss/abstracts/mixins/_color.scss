@@ -1,0 +1,11 @@
+@mixin color($index) {
+    color: map-get($colors, $index);
+}
+
+@mixin bg($index) {
+    background: map-get($colors, $index);
+}
+
+@mixin border-color($index) {
+    border-color: map-get($colors, $index);
+}

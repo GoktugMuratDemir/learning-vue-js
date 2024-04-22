@@ -1,0 +1,31 @@
+@mixin border($index) {
+    border: map-get($sizes, $index) solid;
+}
+
+@mixin border-top($index) {
+    border-top: map-get($sizes, $index) solid;
+}
+
+@mixin border-right($index) {
+    border-right: map-get($sizes, $index) solid;
+}
+
+@mixin border-bottom($index) {
+    border-bottom: map-get($sizes, $index) solid;
+}
+
+@mixin border-left($index) {
+    border-left: map-get($sizes, $index) solid;
+}
+
+@mixin border-x($index) {
+    border-left: map-get($sizes, $index) solid;
+    border-right: map-get($sizes, $index) solid;
+}
+
+@mixin border-y($index) {
+    border-top: map-get($sizes, $index) solid;
+    border-bottom: map-get($sizes, $index) solid;
+}
+
+

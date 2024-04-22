@@ -1,0 +1,15 @@
+@mixin width($key) {
+  @if map-has-key($sizes, $key) {
+    width: map-get($sizes, $key);
+  } @else {
+    @warn "Unknown size key: #{$key}.";
+  }
+}
+
+@mixin height($key) {
+  @if map-has-key($sizes, $key) {
+    height: map-get($sizes, $key);
+  } @else {
+    @warn "Unknown size key: #{$key}.";
+  }
+}

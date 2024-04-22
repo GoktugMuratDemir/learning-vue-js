@@ -1,0 +1,68 @@
+.img {
+    
+    height: auto;
+    max-width: 100%;
+
+
+
+    &.-full {
+        @include width("full");
+    }
+
+    &.-icon {
+        @include width("md");
+        @include height("md");
+    }
+
+    &.-logo {
+        @include width("lg");
+        @include height("lg");
+    }
+
+    &.-thumbnail {
+        @include width("sm");
+        @include height("sm");
+    }
+
+    &.-product {
+        @include width("full");
+        @include height("1-2");
+    }
+
+    &.-avatar {
+        @include width("md");
+        @include height("md");
+        @include shape("full");
+    }
+
+    &.-illustration {
+        @include width("full");
+        @include height("auto");
+    }
+
+    &.-cover {
+        object-fit: cover;
+    }
+
+    &.-contain {
+        object-fit: contain;
+    }
+
+    &.-stretch {
+        object-fit: stretch;
+    }
+
+    &.-center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &.-left {
+        margin-right: auto;
+    }
+
+    &.-right {
+        margin-left: auto;
+    }
+
+}

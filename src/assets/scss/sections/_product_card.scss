@@ -1,0 +1,64 @@
+.product-card {
+  @include flex(row, nowrap, center, start);
+  @include bg("success");
+  @include gap("xxl");
+  @include bg("white");
+  @include shape("md");
+  @include p("all", "xxl");
+  @include width("1-2");
+
+  @include breakpoint("mobile") {
+    @include flex(column, nowrap, start, start);
+    @include p("all", "lg");
+  }
+
+  &__detail {
+    @include flex(column, nowrap, center, start);
+    @include gap("md");
+
+    @include breakpoint("mobile") {
+      @include gap("xs");
+    }
+  }
+
+  &__badge {
+    @include flex(column, nowrap, center, start);
+    @include gap("sm");
+
+    @include breakpoint("mobile") {
+      @include gap("xs");
+    }
+  }
+
+  &__stock {
+    position: relative;
+
+    @include p("l", "sm");
+
+    @include breakpoint("mobile") {
+      @include m("t", "md");
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 1px;
+      left: 0;
+      @include width("xs");
+      @include height("xs");
+      @include shape("1-2");
+      @include bg("success");
+    }
+  }
+
+  &__actions {
+    @include flex(row, nowrap, center, start);
+    @include gap("sm");
+    @include width("full");
+
+    @include breakpoint("mobile") {
+      @include flex(column, nowrap, start, start);
+      @include gap("xs");
+    }
+  }
+}

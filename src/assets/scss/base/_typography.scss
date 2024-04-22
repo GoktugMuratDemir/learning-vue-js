@@ -1,0 +1,42 @@
+body {
+    font-family: $font-primary;
+    font-size: map-get($font-sizes, "md");
+    color: map-get($colors, "dark");
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-primary;
+    color: map-get($colors, "primary");
+    margin-bottom: map-get($sizes, "md");
+}
+
+h1 {
+    font-size: map-get($font-sizes, "xxxl");
+}
+
+h2 {
+    font-size: map-get($font-sizes, "xxl");
+}
+
+h3 {
+    font-size: map-get($font-sizes, "xl");
+}
+
+p {
+    margin-bottom: map-get($sizes, "md");
+}
+
+a {
+    color: map-get($colors, "primary");
+    text-decoration: none;
+
+    &:hover {
+        color: tint(map-get($colors, "primary"), 20%);
+    }
+}

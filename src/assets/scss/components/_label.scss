@@ -1,0 +1,31 @@
+.label {
+  display: inline-block;
+  @include p("all", "xs");
+  @include color("white");
+  font-size: map-get($font-sizes , "sm");
+  font-weight: map-get($font-weight , "semibold");
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  @include shape("9999");
+
+  @include breakpoint("mobile") {
+    font-size: map-get($font-sizes , "xs");
+  }
+
+  &.-primary {
+    @include bg("primary");
+  }
+
+  &.-dark {
+    @include bg("black");
+  }
+
+  &.-danger {
+    @include bg("danger");
+  }
+
+  &.-light {
+    @include bg("light");
+  }
+}

@@ -1,0 +1,11 @@
+// body {
+//   @include height("screen");
+//   @include width("full");
+//   @include bg("light");
+//   @include flex(column, nowrap, center, center);
+
+//   @include breakpoint("mobile") {
+//     @include height("full");
+//     @include p("y", "md");
+//   }
+// }

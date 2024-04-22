@@ -1,0 +1,161 @@
+.text {
+  font-family: $font-primary;
+  color: map-get($colors, "black");
+  font-size: map-get($font-sizes, "md");
+  font-weight: map-get($font-weight, "regular");
+
+  &.-secondary {
+    color: map-get($colors, "secondary");
+  }
+
+  &.-danger {
+    color: map-get($colors, "danger");
+  }
+
+  &.-light {
+    color: map-get($colors, "light");
+  }
+
+  &.-dark {
+    color: map-get($colors, "dark");
+  }
+
+  &.-xxs {
+    font-size: map-get($font-sizes, "xxs");
+    line-height: map-get($line-heights, "none");
+  }
+
+  &.-xs {
+    font-size: map-get($font-sizes, "xs");
+    line-height: map-get($line-heights, "none");
+
+    @include breakpoint("mobile") {
+      font-size: map-get($font-sizes, "xxs");
+    }
+  }
+
+  &.-sm {
+    font-size: map-get($font-sizes, "sm");
+    line-height: map-get($line-heights, "none");
+
+    @include breakpoint("mobile") {
+      font-size: map-get($font-sizes, "xs");
+    }
+  }
+
+  &.-lg {
+    font-size: map-get($font-sizes, "lg");
+    line-height: map-get($line-heights, "none");
+
+    @include breakpoint("mobile") {
+      font-size: map-get($font-sizes, "md");
+    }
+  }
+
+  &.-xl {
+    font-size: map-get($font-sizes, "xl");
+    line-height: map-get($line-heights, "none");
+
+    @include breakpoint("mobile") {
+      font-size: map-get($font-sizes, "lg");
+    }
+  }
+
+  &.-xxl {
+    font-size: map-get($font-sizes, "xxl");
+    line-height: map-get($line-heights, "short");
+
+    @include breakpoint("mobile") {
+      font-size: map-get($font-sizes, "xl");
+    }
+  }
+
+  &.-xxxl {
+    font-size: map-get($font-sizes, "xxxl");
+    line-height: map-get($line-heights, "none");
+
+    @include breakpoint("mobile") {
+      font-size: map-get($font-sizes, "xxl");
+    }
+  }
+
+  &.-light-weight {
+    font-weight: map-get($font-weight, "light");
+  }
+
+  &.-medium-weight {
+    font-weight: map-get($font-weight, "medium");
+  }
+
+  &.-semibold {
+    font-weight: map-get($font-weight, "semibold");
+  }
+
+  &.-bold {
+    font-weight: map-get($font-weight, "bold");
+  }
+
+  &.-uppercase {
+    text-transform: uppercase;
+  }
+
+  &.-lowercase {
+    text-transform: lowercase;
+  }
+
+  &.-capitalize {
+    text-transform: capitalize;
+  }
+
+  &.-center {
+    text-align: center;
+  }
+
+  &.-right {
+    text-align: right;
+  }
+
+  &.-left {
+    text-align: left;
+  }
+
+  &.-justify {
+    text-align: justify;
+  }
+
+  &.-italic {
+    font-style: italic;
+  }
+
+  &.-line-through {
+    text-decoration: line-through;
+  }
+
+  &.-underline {
+    text-decoration: underline;
+  }
+
+  &.-no-wrap {
+    white-space: nowrap;
+  }
+
+  &.-break-word {
+    word-wrap: break-word;
+  }
+
+  &.-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &.-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &.-hide {
+    display: none;
+  }
+}

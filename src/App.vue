@@ -4,9 +4,12 @@ import Header from './layouts/Header.vue'
 
 <template>
   <div>
+    <div class="hello">temp</div>
     <Header />
     <router-view></router-view>
   </div>
 </template>
 
-<style scoped></style>
+<style lang="scss">
+@import './assets/scss/main.scss';
+</style>
