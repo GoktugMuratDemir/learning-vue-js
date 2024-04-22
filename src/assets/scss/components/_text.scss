@@ -1,23 +1,23 @@
 .text {
   font-family: $font-primary;
-  color: map-get($colors, "black");
+  color: map-get($colors-product-info-ui, "black");
   font-size: map-get($font-sizes, "md");
   font-weight: map-get($font-weight, "regular");
 
   &.-secondary {
-    color: map-get($colors, "secondary");
+    color: map-get($colors-product-info-ui, "secondary");
   }
 
   &.-danger {
-    color: map-get($colors, "danger");
+    color: map-get($colors-product-info-ui, "danger");
   }
 
   &.-light {
-    color: map-get($colors, "light");
+    color: map-get($colors-product-info-ui, "light");
   }
 
   &.-dark {
-    color: map-get($colors, "dark");
+    color: map-get($colors-product-info-ui, "dark");
   }
 
   &.-xxs {

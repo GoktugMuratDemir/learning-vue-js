@@ -1,11 +1,11 @@
 @mixin color($index) {
-    color: map-get($colors, $index);
+    color: map-get($colors-product-info-ui, $index);
 }
 
 @mixin bg($index) {
-    background: map-get($colors, $index);
+    background: map-get($colors-product-info-ui, $index);
 }
 
 @mixin border-color($index) {
-    border-color: map-get($colors, $index);
+    border-color: map-get($colors-product-info-ui, $index);
 }
