@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $colors-product-info-ui: (
   "primary": #4788e9,
   "secondary": #c9c9da,
@@ -56,12 +58,12 @@ $sizes: (
   "fit": fit-content,
 ) !default;
 
-@for $i from 1 through 4 {
-  @for $j from $i through 4 {
-    $sizes: map-merge($sizes, ($i + "-" + $j: percentage($i/$j)));
+@for $i from 1 through 5 {
+  @for $j from $i through 5 {
+    $sizes: map-merge($sizes, ($i + "-" + $j: percentage(math.div($i, $j))));
   }
 }
 
-@for $i from 1 through 30 {
+@for $i from 1 through 32 {
   $sizes: map-merge($sizes, ($i + "": $i * 4px));
 }
