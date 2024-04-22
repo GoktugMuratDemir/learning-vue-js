@@ -1,3 +1,15 @@
+.product-card-container {
+  @include height("screen");
+  @include width("full");
+  @include bg("light");
+  @include flex(column, nowrap, center, center);
+
+  @include breakpoint("mobile") {
+    @include height("full");
+    @include p("y", "md");
+  }
+}
+
 .product-card {
   @include flex(row, nowrap, center, start);
   @include bg("success");

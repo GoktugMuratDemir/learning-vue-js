@@ -4,7 +4,6 @@ import Header from './layouts/Header.vue'
 
 <template>
   <div>
-    <div class="hello">temp</div>
     <Header />
     <router-view></router-view>
   </div>

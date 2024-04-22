@@ -460,6 +460,23 @@ a:hover {
   background: #e5e5e5;
 }
 
+.product-card-container {
+  height: 100vh;
+  width: 100%;
+  background: #e5e5e5;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .product-card-container {
+    height: 100%;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+
 .product-card {
   display: flex;
   flex-flow: row nowrap;

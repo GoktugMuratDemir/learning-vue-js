@@ -1,12 +1,13 @@
 import { createRouter, createWebHistory } from "vue-router";
-import PageOne from "../pages/PageOne.vue";
+
 import PageTwo from "../pages/PageTwo.vue";
+import ProductCardInfoUiDesign from "../pages/ProductCardInfoUiDesign.vue";
 
 const routes = [
   {
     path: "/",
     name: "PageOne",
-    component: PageOne,
+    component: ProductCardInfoUiDesign,
   },
   {
     path: "/two",
