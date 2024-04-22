@@ -1,8 +1,9 @@
 <template>
-    <header>
-        <router-link to="/">One</router-link>
-        <router-link to="/two">Two</router-link>
-
+    <header class="header">
+        <nav class="header__nav">
+            <router-link class="header__nav-item" to="/">Product Info UI Design</router-link>
+            <router-link class="header__nav-item" to="/two">Two</router-link>
+        </nav>
     </header>
 </template>
 
@@ -11,20 +12,3 @@ export default {
     name: 'Header'
 }
 </script>
-
-<style scoped>
-header {
-    background-color: #f8f9fa;
-    padding: 20px;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 10px;
-}
-</style>

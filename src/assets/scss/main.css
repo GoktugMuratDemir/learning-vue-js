@@ -557,4 +557,32 @@ a:hover {
     align-items: start;
     gap: 8px;
   }
+}
+
+.header {
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+.header__nav-item {
+  display: inline-block;
+  margin-right: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: #191847;
+  background: #ffffff;
+  border-radius: 24px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s, background-color 0.3s;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+.header__nav-item:hover {
+  color: #4788E9;
+  background: #e5e5e5;
+}
+.header__nav .router-link-active {
+  color: #4788E9;
+  background: #e5e5e5;
 }/*# sourceMappingURL=main.css.map */
