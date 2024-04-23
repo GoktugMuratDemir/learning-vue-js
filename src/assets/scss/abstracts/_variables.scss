@@ -5,9 +5,12 @@ $colors: (
   "secondary": #c9c9da,
   "danger": #e74c3c,
   "light": #e5e5e5,
+  "light-200": rgba(255, 255, 255, 0.5),
   "dark": #191847,
+  "dark-400": #162938,
   "white": #ffffff,
   "black": #000000,
+  "black-100": rgba(0, 0, 0, 0.5),
   "success": #00d98b,
 );
 
@@ -37,6 +40,12 @@ $font-weight: (
   "medium": 500,
   "semibold": 600,
   "bold": 700,
+);
+
+$text-decorations: (
+  "none": none,
+  "underline": underline,
+  "line-through": line-through,
 );
 
 $breakpoints: (

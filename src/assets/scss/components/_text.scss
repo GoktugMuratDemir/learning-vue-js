@@ -20,6 +20,25 @@
     color: map-get($colors, "dark");
   }
 
+  &.-white {
+    color: map-get($colors, "white");
+  }
+
+  &.-link {
+    font-size: map-get($font-sizes, "xs");
+    color: map-get($colors, "dark-400");
+    text-decoration: underline;
+    transition: 0.3s;
+
+    @include breakpoint("mobile") {
+      font-size: map-get($font-sizes, "xxs");
+    }
+
+    &:hover {
+      color: map-get($colors, "black-100");
+    }
+  }
+
   &.-xxs {
     font-size: map-get($font-sizes, "xxs");
     line-height: map-get($line-heights, "none");

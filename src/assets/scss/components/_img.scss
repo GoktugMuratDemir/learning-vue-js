@@ -1,68 +1,69 @@
 .img {
-    
-    height: auto;
-    max-width: 100%;
+  height: auto;
+  max-width: 100%;
 
+  &.-full {
+    @include width("full");
+  }
 
+  &.-icon {
+    @include width("6");
+    @include height("6");
 
-    &.-full {
-        @include width("full");
+    @include breakpoint("mobile") {
+      @include width("4");
+      @include height("4");
     }
+  }
 
-    &.-icon {
-        @include width("6");
-        @include height("6");
-    }
+  &.-logo {
+    @include width("8");
+    @include height("8");
+  }
 
-    &.-logo {
-        @include width("8");
-        @include height("8");
-    }
+  &.-thumbnail {
+    @include width("4");
+    @include height("4");
+  }
 
-    &.-thumbnail {
-        @include width("4");
-        @include height("4");
-    }
+  &.-product {
+    @include width("full");
+    @include height("1-2");
+  }
 
-    &.-product {
-        @include width("full");
-        @include height("1-2");
-    }
+  &.-avatar {
+    @include width("6");
+    @include height("6");
+    @include shape("full");
+  }
 
-    &.-avatar {
-        @include width("6");
-        @include height("6");
-        @include shape("full");
-    }
+  &.-illustration {
+    @include width("full");
+    @include height("auto");
+  }
 
-    &.-illustration {
-        @include width("full");
-        @include height("auto");
-    }
+  &.-cover {
+    object-fit: cover;
+  }
 
-    &.-cover {
-        object-fit: cover;
-    }
+  &.-contain {
+    object-fit: contain;
+  }
 
-    &.-contain {
-        object-fit: contain;
-    }
+  &.-stretch {
+    object-fit: stretch;
+  }
 
-    &.-stretch {
-        object-fit: stretch;
-    }
+  &.-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    &.-center {
-        margin-left: auto;
-        margin-right: auto;
-    }
+  &.-left {
+    margin-right: auto;
+  }
 
-    &.-left {
-        margin-right: auto;
-    }
-
-    &.-right {
-        margin-left: auto;
-    }
-
+  &.-right {
+    margin-left: auto;
+  }
 }

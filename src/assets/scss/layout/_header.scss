@@ -20,7 +20,7 @@
         width: 0;
         height: 2px;
         @include bg("white");
-        transition: width 0.3s;
+        transition: width 0.4s ease;
       }
 
       &:hover::after {

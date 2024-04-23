@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import PageTwo from "../pages/PageTwo.vue";
 import ProductCardInfoUiDesign from "../pages/ProductCardInfoUiDesign.vue";
+import Login from "../pages/Login.vue";
 
 const routes = [
   {
@@ -10,9 +10,9 @@ const routes = [
     component: ProductCardInfoUiDesign,
   },
   {
-    path: "/two",
-    name: "PageTwo",
-    component: PageTwo,
+    path: "/login",
+    name: "Login",
+    component: Login,
   },
 ];
 

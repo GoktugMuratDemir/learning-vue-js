@@ -9,3 +9,11 @@
 @mixin font-weight($index) {
     font-weight: map-get($font-weight, $index);
 }
+
+@mixin line-height($index) {
+    line-height: map-get($line-heights, $index);
+}
+
+@mixin text-decoration($index) {
+    text-decoration: map-get($text-decorations, $index);
+}
