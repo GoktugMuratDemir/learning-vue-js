@@ -13,3 +13,35 @@
     @warn "Unknown size key: #{$key}.";
   }
 }
+
+@mixin min-width($key) {
+  @if map-has-key($sizes, $key) {
+    min-width: map-get($sizes, $key);
+  } @else {
+    @warn "Unknown size key: #{$key}.";
+  }
+}
+
+@mixin max-width($key) {
+  @if map-has-key($sizes, $key) {
+    max-width: map-get($sizes, $key);
+  } @else {
+    @warn "Unknown size key: #{$key}.";
+  }
+}
+
+@mixin min-height($key) {
+  @if map-has-key($sizes, $key) {
+    min-height: map-get($sizes, $key);
+  } @else {
+    @warn "Unknown size key: #{$key}.";
+  }
+}
+
+@mixin max-height($key) {
+  @if map-has-key($sizes, $key) {
+    max-height: map-get($sizes, $key);
+  } @else {
+    @warn "Unknown size key: #{$key}.";
+  }
+}
