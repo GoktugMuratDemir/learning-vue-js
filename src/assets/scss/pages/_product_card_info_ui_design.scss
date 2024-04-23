@@ -1,3 +1,12 @@
+/**
+ * FILEPATH: /src/assets/scss/pages/_product_card_info_ui_design.scss
+ * 
+ * This SCSS file contains styles for the product card UI design.
+ * It includes styles for the container, card, details, badge, stock, and actions of the product card.
+ * The styles are organized using mixins and breakpoints for responsive design.
+ */
+
+ 
 .product-card-container {
   @include height("screen");
   @include width("full");

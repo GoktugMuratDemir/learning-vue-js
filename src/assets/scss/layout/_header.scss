@@ -1,6 +1,6 @@
 .header {
   background-color: #000000a8;
-  padding: 20px;
+  @include p("all", "5");
 
   &__nav {
     @include flex(row, nowrap, start, start);
@@ -17,14 +17,14 @@
       &::after {
         content: "";
         display: block;
-        width: 0;
+        @include width("none");
         height: 2px;
         @include bg("white");
         transition: width 0.4s ease;
       }
 
       &:hover::after {
-        width: 100%;
+        @include width("full");
       }
     }
 
@@ -38,23 +38,3 @@
   }
 }
 
-// display: inline-block;
-// @include m("r", "5");
-// @include p("x", "4");
-// @include p("y", "2");
-// color : map-get($colors, "dark");
-// @include bg("white");
-// @include shape("6");
-// font-weight: map-get($font-weight, "medium");
-// text-decoration: none;
-// transition: color 0.3s, background-color 0.3s;
-// @include boxShadow(0, 0, map-get($sizes, "2"), 0, rgba(0,0,0,0.1));
-
-// &:hover {
-//     color : map-get($colors, "primary");
-//     @include bg("light");
-// }
-
-// .router-link-active {
-//     @include color("primary");
-// }

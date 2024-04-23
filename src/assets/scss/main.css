@@ -90,6 +90,21 @@ a:hover {
   color: #6ca0ed;
 }
 
+/**
+ * @desc Styles for the button component.
+ *
+ * The `.btn` class is used to style buttons. It applies various mixins to set the width, flex properties, spacing, shape, padding, font properties, and cursor. It also includes responsive styles for mobile devices.
+ *
+ * The `.btn.-outlined` class is used to style outlined buttons. It sets the border to 1px solid and the background color to transparent. It applies color and border-color based on the color variable values. It also sets the background color to a lighter shade on hover.
+ *
+ * The `.btn.-contained` class is used to style contained buttons. It sets the border to none. It applies background color, box shadow, and text color based on the color variable values. It also sets the background color to a darker shade on hover.
+ *
+ * @example
+ * // HTML
+ * <button class="btn">Default Button</button>
+ * <button class="btn -outlined -primary">Primary Outlined Button</button>
+ * <button class="btn -contained -secondary">Secondary Contained Button</button>
+  */
 .btn {
   width: 100%;
   display: flex;
@@ -283,6 +298,46 @@ a:hover {
   background-color: #00a66a;
 }
 
+/**
+ * FILEPATH: src/assets/scss/components/_text.scss
+ * 
+ * This SCSS file defines styles for the `.text` class, which is used to style text elements.
+ * It includes various modifiers for different text styles, sizes, weights, alignments, and decorations.
+ * 
+ * Modifiers:
+ * - .-secondary: Sets the text color to the secondary color defined in the `$colors` map.
+ * - .-danger: Sets the text color to the danger color defined in the `$colors` map.
+ * - .-light: Sets the text color to the light color defined in the `$colors` map.
+ * - .-dark: Sets the text color to the dark color defined in the `$colors` map.
+ * - .-white: Sets the text color to the white color defined in the `$colors` map.
+ * - .-link: Sets the font size to `xs`, color to `dark-400`, adds underline, and transitions on hover.
+ * - .-xxs: Sets the font size to `xxs` and line height to `none`.
+ * - .-xs: Sets the font size to `xs` and line height to `none`. On mobile, font size is `xxs`.
+ * - .-sm: Sets the font size to `sm` and line height to `none`. On mobile, font size is `xs`.
+ * - .-lg: Sets the font size to `lg` and line height to `none`. On mobile, font size is `md`.
+ * - .-xl: Sets the font size to `xl` and line height to `none`. On mobile, font size is `lg`.
+ * - .-xxl: Sets the font size to `xxl` and line height to `short`. On mobile, font size is `xl`.
+ * - .-xxxl: Sets the font size to `xxxl` and line height to `none`. On mobile, font size is `xxl`.
+ * - .-light-weight: Sets the font weight to `light`.
+ * - .-medium-weight: Sets the font weight to `medium`.
+ * - .-semibold: Sets the font weight to `semibold`.
+ * - .-bold: Sets the font weight to `bold`.
+ * - .-uppercase: Sets the text to uppercase.
+ * - .-lowercase: Sets the text to lowercase.
+ * - .-capitalize: Sets the text to capitalize.
+ * - .-center: Sets the text alignment to center.
+ * - .-right: Sets the text alignment to right.
+ * - .-left: Sets the text alignment to left.
+ * - .-justify: Sets the text alignment to justify.
+ * - .-italic: Sets the font style to italic.
+ * - .-line-through: Adds a line-through text decoration.
+ * - .-underline: Adds an underline text decoration.
+ * - .-no-wrap: Sets the white space to nowrap.
+ * - .-break-word: Sets the word wrap to break-word.
+ * - .-ellipsis: Sets the text overflow to ellipsis and hides overflow.
+ * - .-truncate: Sets the text overflow to ellipsis and hides overflow.
+ * - .-hide: Hides the text by setting display to none.
+ */
 .text {
   font-family: "Poppins", sans-serif;
   color: #000000;
@@ -499,6 +554,29 @@ a:hover {
   margin-left: auto;
 }
 
+/**
+ * @file _label.scss
+ * @desc This file contains the styles for the label component.
+ */
+/**
+ * @class .label
+ * @desc Represents a label component.
+ *
+ * @cssprop {display} display - Specifies the display behavior of the label.
+ * @cssprop {padding} padding - Specifies the padding of the label.
+ * @cssprop {color} color - Specifies the text color of the label.
+ * @cssprop {font-size} font-size - Specifies the font size of the label.
+ * @cssprop {font-weight} font-weight - Specifies the font weight of the label.
+ * @cssprop {text-align} text-align - Specifies the text alignment of the label.
+ * @cssprop {white-space} white-space - Specifies the white space handling of the label.
+ * @cssprop {vertical-align} vertical-align - Specifies the vertical alignment of the label.
+ * @cssprop {border-radius} border-radius - Specifies the border radius of the label.
+ *
+ * @modifier -primary - Applies primary background color to the label.
+ * @modifier -dark - Applies dark background color to the label.
+ * @modifier -danger - Applies danger background color to the label.
+ * @modifier -light - Applies light background color to the label.
+ */
 .label {
   display: inline-block;
   padding: 4px;
@@ -564,6 +642,47 @@ a:hover {
   background: #00d98b;
 }
 
+/**
+ * FILEPATH: src/assets/scss/pages/_login.scss
+ * 
+ * This SCSS file contains styles for the login page.
+ * 
+ * The `.login` class represents the main container for the login page.
+ * It applies various mixins to set the layout, background image, and other styles.
+ * 
+ * The `.login__wrapper` class represents the wrapper container inside the login page.
+ * It sets the position, width, background, border, blur effect, box shadow, and padding.
+ * It also applies different styles for mobile breakpoints.
+ * 
+ * The `.login__form` class represents the form container inside the login page.
+ * It sets the width, padding, and layout for the form.
+ * It also applies different styles for mobile breakpoints.
+ * 
+ * The `.login__form-group` class represents a form group inside the login form.
+ * It sets the position, width, height, and border for the form group.
+ * 
+ * The `.login__form-group__label` class represents the label inside a form group.
+ * It sets the position, color, font size, font weight, and transition for the label.
+ * It also applies different styles for mobile breakpoints.
+ * 
+ * The `.login__form-group__input` class represents the input field inside a form group.
+ * It sets the width, height, background, border, color, font size, and font weight for the input field.
+ * It also applies different styles for mobile breakpoints.
+ * 
+ * The `.login__form-group__icon` class represents the icon inside a form group.
+ * It sets the position, top, right, and transition for the icon.
+ * 
+ * The `.login__form-actions` class represents the actions container inside the login form.
+ * It sets the width, font size, color, font weight, and layout for the actions container.
+ * It also applies different styles for mobile breakpoints.
+ * 
+ * The `.login__form-actions__label` class represents the label inside the actions container.
+ * It sets the color, font size, font weight, layout, and gap for the label.
+ * It also applies different styles for mobile breakpoints.
+ * 
+ * The `.login__form-actions__checkbox` class represents the checkbox inside the actions container.
+ * It sets the accent color for the checkbox.
+ */
 .login {
   display: flex;
   flex-flow: column nowrap;
@@ -694,6 +813,13 @@ a:hover {
   accent-color: #162938;
 }
 
+/**
+ * FILEPATH: /src/assets/scss/pages/_product_card_info_ui_design.scss
+ * 
+ * This SCSS file contains styles for the product card UI design.
+ * It includes styles for the container, card, details, badge, stock, and actions of the product card.
+ * The styles are organized using mixins and breakpoints for responsive design.
+ */
 .product-card-container {
   height: 100vh;
   width: 100%;

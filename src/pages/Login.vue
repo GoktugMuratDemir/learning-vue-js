@@ -1,8 +1,22 @@
+/**
+ * Component for the login page.
+ *
+ * This component displays a login form with email and password fields.
+ * Users can enter their credentials and click the "Login" button to log in.
+ * The component also provides a "Remember Me" checkbox and a "Forgot Password?" link.
+ * If users don't have an account, they can click the "Register" link to create one.
+ *
+ * @component
+ * @example
+ * <Login />
+ */
+ 
 <template>
   <div class="login">
     <div class="login__wrapper">
       <p class="text -xxxl -bold">Login</p>
       <form class="login__form">
+        <!-- Email field -->
         <div class="login__form-group">
           <img
             class="login__form-group__icon img -icon"
@@ -13,6 +27,7 @@
           <label class="login__form-group__label">Email</label>
         </div>
 
+        <!-- Password field -->
         <div class="login__form-group">
           <img
             class="login__form-group__icon img -icon"
@@ -23,6 +38,7 @@
           <label class="login__form-group__label">Password</label>
         </div>
 
+        <!-- Remember Me checkbox and Forgot Password link -->
         <div class="login__form-actions">
           <label class="login__form-actions__label">
             <input
@@ -35,8 +51,10 @@
           <a class="text -link" href="#"> Forgot Password?</a>
         </div>
 
+        <!-- Login button -->
         <button class="btn -contained -dark-400">Login</button>
 
+        <!-- Register link -->
         <p class="text -xs -medium -dark-400">
           Don't have an account? <a class="text -link" href="#">Register</a>
         </p>

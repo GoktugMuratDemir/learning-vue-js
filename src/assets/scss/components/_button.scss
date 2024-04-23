@@ -1,3 +1,19 @@
+/**
+ * @desc Styles for the button component.
+ *
+ * The `.btn` class is used to style buttons. It applies various mixins to set the width, flex properties, spacing, shape, padding, font properties, and cursor. It also includes responsive styles for mobile devices.
+ *
+ * The `.btn.-outlined` class is used to style outlined buttons. It sets the border to 1px solid and the background color to transparent. It applies color and border-color based on the color variable values. It also sets the background color to a lighter shade on hover.
+ *
+ * The `.btn.-contained` class is used to style contained buttons. It sets the border to none. It applies background color, box shadow, and text color based on the color variable values. It also sets the background color to a darker shade on hover.
+ *
+ * @example
+ * // HTML
+ * <button class="btn">Default Button</button>
+ * <button class="btn -outlined -primary">Primary Outlined Button</button>
+ * <button class="btn -contained -secondary">Secondary Contained Button</button>
+  */
+  
 .btn {
   @include width("full");
   @include flex(row, nowrap, center, center);

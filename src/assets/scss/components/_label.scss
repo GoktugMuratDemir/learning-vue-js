@@ -1,3 +1,27 @@
+/**
+ * @file _label.scss
+ * @desc This file contains the styles for the label component.
+ */
+
+/**
+ * @class .label
+ * @desc Represents a label component.
+ *
+ * @cssprop {display} display - Specifies the display behavior of the label.
+ * @cssprop {padding} padding - Specifies the padding of the label.
+ * @cssprop {color} color - Specifies the text color of the label.
+ * @cssprop {font-size} font-size - Specifies the font size of the label.
+ * @cssprop {font-weight} font-weight - Specifies the font weight of the label.
+ * @cssprop {text-align} text-align - Specifies the text alignment of the label.
+ * @cssprop {white-space} white-space - Specifies the white space handling of the label.
+ * @cssprop {vertical-align} vertical-align - Specifies the vertical alignment of the label.
+ * @cssprop {border-radius} border-radius - Specifies the border radius of the label.
+ *
+ * @modifier -primary - Applies primary background color to the label.
+ * @modifier -dark - Applies dark background color to the label.
+ * @modifier -danger - Applies danger background color to the label.
+ * @modifier -light - Applies light background color to the label.
+ */
 .label {
   display: inline-block;
   @include p("all", "1");

@@ -1,3 +1,46 @@
+/**
+ * FILEPATH: src/assets/scss/pages/_login.scss
+ * 
+ * This SCSS file contains styles for the login page.
+ * 
+ * The `.login` class represents the main container for the login page.
+ * It applies various mixins to set the layout, background image, and other styles.
+ * 
+ * The `.login__wrapper` class represents the wrapper container inside the login page.
+ * It sets the position, width, background, border, blur effect, box shadow, and padding.
+ * It also applies different styles for mobile breakpoints.
+ * 
+ * The `.login__form` class represents the form container inside the login page.
+ * It sets the width, padding, and layout for the form.
+ * It also applies different styles for mobile breakpoints.
+ * 
+ * The `.login__form-group` class represents a form group inside the login form.
+ * It sets the position, width, height, and border for the form group.
+ * 
+ * The `.login__form-group__label` class represents the label inside a form group.
+ * It sets the position, color, font size, font weight, and transition for the label.
+ * It also applies different styles for mobile breakpoints.
+ * 
+ * The `.login__form-group__input` class represents the input field inside a form group.
+ * It sets the width, height, background, border, color, font size, and font weight for the input field.
+ * It also applies different styles for mobile breakpoints.
+ * 
+ * The `.login__form-group__icon` class represents the icon inside a form group.
+ * It sets the position, top, right, and transition for the icon.
+ * 
+ * The `.login__form-actions` class represents the actions container inside the login form.
+ * It sets the width, font size, color, font weight, and layout for the actions container.
+ * It also applies different styles for mobile breakpoints.
+ * 
+ * The `.login__form-actions__label` class represents the label inside the actions container.
+ * It sets the color, font size, font weight, layout, and gap for the label.
+ * It also applies different styles for mobile breakpoints.
+ * 
+ * The `.login__form-actions__checkbox` class represents the checkbox inside the actions container.
+ * It sets the accent color for the checkbox.
+ */
+
+ 
 .login {
   @include flex(column, nowrap, center, center);
   @include min-height("screen");

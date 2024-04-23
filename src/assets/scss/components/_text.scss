@@ -1,3 +1,45 @@
+/**
+ * FILEPATH: src/assets/scss/components/_text.scss
+ * 
+ * This SCSS file defines styles for the `.text` class, which is used to style text elements.
+ * It includes various modifiers for different text styles, sizes, weights, alignments, and decorations.
+ * 
+ * Modifiers:
+ * - .-secondary: Sets the text color to the secondary color defined in the `$colors` map.
+ * - .-danger: Sets the text color to the danger color defined in the `$colors` map.
+ * - .-light: Sets the text color to the light color defined in the `$colors` map.
+ * - .-dark: Sets the text color to the dark color defined in the `$colors` map.
+ * - .-white: Sets the text color to the white color defined in the `$colors` map.
+ * - .-link: Sets the font size to `xs`, color to `dark-400`, adds underline, and transitions on hover.
+ * - .-xxs: Sets the font size to `xxs` and line height to `none`.
+ * - .-xs: Sets the font size to `xs` and line height to `none`. On mobile, font size is `xxs`.
+ * - .-sm: Sets the font size to `sm` and line height to `none`. On mobile, font size is `xs`.
+ * - .-lg: Sets the font size to `lg` and line height to `none`. On mobile, font size is `md`.
+ * - .-xl: Sets the font size to `xl` and line height to `none`. On mobile, font size is `lg`.
+ * - .-xxl: Sets the font size to `xxl` and line height to `short`. On mobile, font size is `xl`.
+ * - .-xxxl: Sets the font size to `xxxl` and line height to `none`. On mobile, font size is `xxl`.
+ * - .-light-weight: Sets the font weight to `light`.
+ * - .-medium-weight: Sets the font weight to `medium`.
+ * - .-semibold: Sets the font weight to `semibold`.
+ * - .-bold: Sets the font weight to `bold`.
+ * - .-uppercase: Sets the text to uppercase.
+ * - .-lowercase: Sets the text to lowercase.
+ * - .-capitalize: Sets the text to capitalize.
+ * - .-center: Sets the text alignment to center.
+ * - .-right: Sets the text alignment to right.
+ * - .-left: Sets the text alignment to left.
+ * - .-justify: Sets the text alignment to justify.
+ * - .-italic: Sets the font style to italic.
+ * - .-line-through: Adds a line-through text decoration.
+ * - .-underline: Adds an underline text decoration.
+ * - .-no-wrap: Sets the white space to nowrap.
+ * - .-break-word: Sets the word wrap to break-word.
+ * - .-ellipsis: Sets the text overflow to ellipsis and hides overflow.
+ * - .-truncate: Sets the text overflow to ellipsis and hides overflow.
+ * - .-hide: Hides the text by setting display to none.
+ */
+
+ 
 .text {
   font-family: $font-primary;
   color: map-get($colors, "black");
