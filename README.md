@@ -1,4 +1,4 @@
-# Learning Vue Js
+# Learning Vue Js + Scss
 
 ## Live Preview
 
