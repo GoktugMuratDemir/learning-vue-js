@@ -2,13 +2,26 @@
   background-color: #000000a8;
   @include p("all", "5");
 
+  @include breakpoint("mobile") {
+    @include p("all", "3");
+  }
+
   &__nav {
     @include flex(row, nowrap, start, start);
     @include gap("4");
 
+    @include breakpoint("mobile") {
+      @include gap("2");
+    }
+
     &-item {
       @include color("white");
       @include font-weight("semibold");
+      @include font-size("md");
+
+      @include breakpoint("mobile") {
+        @include font-size("xs");
+      }
 
       &:hover {
         @include color("white");
