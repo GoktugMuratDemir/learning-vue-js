@@ -1,14 +1,25 @@
 <template>
+    <!-- Header component -->
     <header class="header">
+        <!-- Navigation bar -->
         <nav class="header__nav">
-            <router-link class="header__nav-item" to="/">Product Info UI Design</router-link>
-            <router-link class="header__nav-item" to="/login">Login</router-link>
+            <!-- Loop through all routes and create a link for each one -->
+            <router-link class="header__nav-item" v-for="(route, index) in routes" :key="index" :to="route.path">
+                {{ route.name }}
+            </router-link>
         </nav>
     </header>
 </template>
 
 <script>
+import { routes } from '@/router';
+
 export default {
-    name: 'Header'
+    name: 'Header',
+    data() {
+        return {
+            routes
+        }
+    }
 }
 </script>

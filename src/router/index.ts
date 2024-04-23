@@ -3,17 +3,18 @@ import { createRouter, createWebHistory } from "vue-router";
 import ProductCardInfoUiDesign from "../pages/ProductCardInfoUiDesign.vue";
 import Login from "../pages/Login.vue";
 
-const routes = [
+export const routes = [
   {
     path: "/",
-    name: "ProductCardInfoUiDesign",
-    component: ProductCardInfoUiDesign,
-  },
-  {
-    path: "/login",
-    name: "Login",
+    name: "Login UI Design",
     component: Login,
   },
+  {
+    path: "/product-card-info-ui-design",
+    name: "Product Card Info UI Design",
+    component: ProductCardInfoUiDesign,
+  }
+
 ];
 
 const router = createRouter({
