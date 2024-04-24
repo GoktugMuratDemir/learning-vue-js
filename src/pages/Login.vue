@@ -12,12 +12,12 @@
       <!-- Page title -->
       <p class="text -xxxl -bold">Login</p>
       <form class="auth__form">
+        
         <!-- Email field -->
         <AuthTextField icon="ic_mail" type="email" label="Email" />
 
         <!-- Password field -->
         <AuthTextField icon="ic_password" type="password" label="Password" />
-
 
         <!-- Remember Me checkbox and Forgot Password link -->
         <div class="auth__form-actions">

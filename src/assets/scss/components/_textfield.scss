@@ -1,0 +1,55 @@
+.textfield {
+    position: relative;
+    @include width("full");
+    @include height("12");
+    @include border-b(2px, solid, map-get($colors, "dark-400"));
+
+    &__label {
+      position: absolute;
+      top: 50%;
+      left: map-get($sizes, "1");
+      transform: translateY(-50%);
+      @include color("dark-400");
+      @include font-size("md");
+      @include font-weight("medium");
+      transition: 0.3s;
+
+      @include breakpoint("mobile") {
+        @include font-size("xs");
+      }
+    }
+
+    &__input {
+      @include width("full");
+      @include height("full");
+      background: transparent;
+      border: none;
+      outline: none;
+      @include color("dark-400");
+      @include font-size("md");
+      @include font-weight("semibold");
+
+      @include breakpoint("mobile") {
+        @include font-size("xs");
+      }
+
+      &:focus + .textfield__label,
+      &:valid + .textfield__label {
+        top: 0;
+        @include font-size("xs");
+        
+        @include breakpoint("mobile") {
+          @include font-size("xxs");
+        }
+
+      }
+    }
+
+    &__icon {
+      position: absolute;
+      top: 50%;
+      right: map-get($sizes, "2");
+      transform: translateY(-50%);
+      transition: 0.3s;
+    }
+  }

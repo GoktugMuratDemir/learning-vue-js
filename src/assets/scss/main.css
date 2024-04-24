@@ -606,6 +606,59 @@ a:hover {
   background: #e5e5e5;
 }
 
+.textfield {
+  position: relative;
+  width: 100%;
+  height: 48px;
+  border-bottom: 2px solid #162938;
+}
+.textfield__label {
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
+  color: #162938;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+@media (max-width: 768px) {
+  .textfield__label {
+    font-size: 12px;
+  }
+}
+.textfield__input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #162938;
+  font-size: 16px;
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  .textfield__input {
+    font-size: 12px;
+  }
+}
+.textfield__input:focus + .textfield__label, .textfield__input:valid + .textfield__label {
+  top: 0;
+  font-size: 12px;
+}
+@media (max-width: 768px) {
+  .textfield__input:focus + .textfield__label, .textfield__input:valid + .textfield__label {
+    font-size: 8px;
+  }
+}
+.textfield__icon {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  transition: 0.3s;
+}
+
 .header {
   background-color: rgba(0, 0, 0, 0.6588235294);
   padding: 20px;
@@ -701,58 +754,6 @@ a:hover {
   .auth__form {
     gap: 24px;
   }
-}
-.auth__form-group {
-  position: relative;
-  width: 100%;
-  height: 48px;
-  border-bottom: 2px solid #162938;
-}
-.auth__form-group__label {
-  position: absolute;
-  top: 50%;
-  left: 4px;
-  transform: translateY(-50%);
-  color: #162938;
-  font-size: 16px;
-  font-weight: 500;
-  transition: 0.3s;
-}
-@media (max-width: 768px) {
-  .auth__form-group__label {
-    font-size: 12px;
-  }
-}
-.auth__form-group__input {
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: #162938;
-  font-size: 16px;
-  font-weight: 600;
-}
-@media (max-width: 768px) {
-  .auth__form-group__input {
-    font-size: 12px;
-  }
-}
-.auth__form-group__input:focus + .auth__form-group__label, .auth__form-group__input:valid + .auth__form-group__label {
-  top: 0;
-  font-size: 12px;
-}
-@media (max-width: 768px) {
-  .auth__form-group__input:focus + .auth__form-group__label, .auth__form-group__input:valid + .auth__form-group__label {
-    font-size: 8px;
-  }
-}
-.auth__form-group__icon {
-  position: absolute;
-  top: 50%;
-  right: 8px;
-  transform: translateY(-50%);
-  transition: 0.3s;
 }
 .auth__form-actions {
   width: 100%;
