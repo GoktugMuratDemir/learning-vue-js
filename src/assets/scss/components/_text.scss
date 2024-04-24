@@ -45,24 +45,10 @@
   @include font-size("md");
   @include font-weight("regular");
 
-  &.-secondary {
-    @include color("secondary");
-  }
-
-  &.-danger {
-    @include color("danger");
-  }
-
-  &.-light {
-    @include color("light");
-  }
-
-  &.-dark {
-    @include color("dark");
-  }
-
-  &.-white {
-    @include color("white");
+  @each $color, $value in $colors {
+    &.-#{$color} {
+      @include color($color);
+    }
   }
 
   &.-link {

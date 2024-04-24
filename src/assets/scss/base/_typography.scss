@@ -28,9 +28,9 @@ h3 {
     font-size: map-get($font-sizes, "xl");
 }
 
-p {
-    margin-bottom: map-get($sizes, "6");
-}
+// p {
+//     margin-bottom: map-get($sizes, "6");
+// }
 
 a {
     color: map-get($colors, "primary");

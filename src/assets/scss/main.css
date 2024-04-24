@@ -78,10 +78,6 @@ h3 {
   font-size: 24px;
 }
 
-p {
-  margin-bottom: 24px;
-}
-
 a {
   color: #4788e9;
   text-decoration: none;
@@ -389,6 +385,9 @@ a:hover {
   font-size: 16px;
   font-weight: 400;
 }
+.text.-primary {
+  color: #4788e9;
+}
 .text.-secondary {
   color: #c9c9da;
 }
@@ -398,11 +397,35 @@ a:hover {
 .text.-light {
   color: #e5e5e5;
 }
+.text.-light-200 {
+  color: rgba(255, 255, 255, 0.5);
+}
 .text.-dark {
   color: #191847;
 }
+.text.-dark-400 {
+  color: #162938;
+}
 .text.-white {
   color: #ffffff;
+}
+.text.-black {
+  color: #000000;
+}
+.text.-black-100 {
+  color: rgba(0, 0, 0, 0.5);
+}
+.text.-success {
+  color: #00d98b;
+}
+.text.-purple-200 {
+  color: #ebebff;
+}
+.text.-purple-300 {
+  color: #faf2fe;
+}
+.text.-purple-400 {
+  color: #8598fc;
 }
 .text.-link {
   font-size: 12px;
@@ -555,26 +578,48 @@ a:hover {
     height: 16px;
   }
 }
-.img.-logo {
+.img.-sm {
   width: 32px;
   height: 32px;
 }
-.img.-thumbnail {
-  width: 16px;
-  height: 16px;
+@media (max-width: 768px) {
+  .img.-sm {
+    width: 24px;
+    height: 24px;
+  }
 }
-.img.-product {
-  width: 100%;
-  height: 50%;
+.img.-md {
+  width: 48px;
+  height: 48px;
 }
-.img.-avatar {
-  width: 24px;
-  height: 24px;
+@media (max-width: 768px) {
+  .img.-md {
+    width: 32px;
+    height: 32px;
+  }
+}
+.img.-lg {
+  width: 64px;
+  height: 64px;
+}
+@media (max-width: 768px) {
+  .img.-lg {
+    width: 48px;
+    height: 48px;
+  }
+}
+.img.-xl {
+  width: 96px;
+  height: 96px;
+}
+@media (max-width: 768px) {
+  .img.-xl {
+    width: 64px;
+    height: 64px;
+  }
+}
+.img.-rounded {
   border-radius: 100%;
-}
-.img.-illustration {
-  width: 100%;
-  height: auto;
 }
 .img.-cover {
   -o-object-fit: cover;
@@ -683,6 +728,55 @@ a:hover {
 }
 .checkbox__input {
   accent-color: #162938;
+}
+
+.flex {
+  display: flex;
+}
+.flex .g-1 {
+  gap: 10px;
+}
+.flex .g-2 {
+  gap: 20px;
+}
+.flex .g-3 {
+  gap: 30px;
+}
+.flex .g-4 {
+  gap: 40px;
+}
+.flex.-row {
+  flex-direction: row;
+}
+.flex.-column {
+  flex-direction: column;
+}
+.flex.-row-reverse {
+  flex-direction: row-reverse;
+}
+.flex.-column-reverse {
+  flex-direction: column-reverse;
+}
+.flex.-wrap {
+  flex-wrap: wrap;
+}
+.flex.-nowrap {
+  flex-wrap: nowrap;
+}
+.flex.-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+.flex.-start {
+  justify-content: flex-start;
+}
+.flex.-end {
+  justify-content: flex-end;
+}
+.flex.-center {
+  justify-content: center;
+}
+.flex.-between {
+  justify-content: space-between;
 }
 
 .auth-textfield {
@@ -956,7 +1050,7 @@ a:hover {
   align-items: start;
   gap: 32px;
   background: #ffffff;
-  width: 33.3333333333%;
+  width: 50%;
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 16px;
   box-shadow: 0 0 32px 1px rgba(0, 0, 0, 0.5);
@@ -977,9 +1071,12 @@ a:hover {
 }
 .account__header__search {
   position: relative;
-  border: 2px solid #162938;
+  border: 1px solid #C5C5F8;
   border-radius: 16px;
-  padding: 8px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 .account__header__search-input {
   border: none;
@@ -987,8 +1084,8 @@ a:hover {
   background: transparent;
   font-size: 16px;
   color: #162938;
-  font-weight: 600;
-  padding-left: 32px;
+  font-weight: 500;
+  padding-left: 28px;
 }
 .account__header__search-icon {
   position: absolute;
@@ -1035,10 +1132,10 @@ a:hover {
   justify-content: space-between;
   align-items: center;
 }
-.account__list__item__info {
+.account__list__item-info {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row nowrap;
   justify-content: center;
-  align-items: start;
-  gap: 4px;
+  align-items: center;
+  gap: 16px;
 }/*# sourceMappingURL=main.css.map */

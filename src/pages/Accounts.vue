@@ -9,26 +9,28 @@
 
                 <div class="account__header__info">
                     <div class="account__header__info__notification">
-                        <img class="img -icon" src="@/assets/img/icons/ic_notification.svg" alt="" />
+                        <img class="img -sm" src="@/assets/img/icons/ic_notification.svg" alt="" />
                         <div class="account__header__info__notification-badge"></div>
                     </div>
 
-                    <img class="img -icon" src="@/assets/img/icons/ic_temp_avatar.svg" alt="" />
+                    <img class="img -md" src="@/assets/img/icons/ic_temp_avatar.svg" alt="" />
                 </div>
             </header>
-            <p class="text -xxl -bold ">Accounts</p>
+            <p class="text -xxl -bold -center">Accounts</p>
             <div class="account__list">
-                <div class="account__list__item">
-                    <img class="img -icon" src="@/assets/img/icons/ic_temp_avatar.svg" alt="" />
-
+                <div class="account__list__item" v-for="(account, index) in accounts" :key="index">
                     <div class="account__list__item__info">
-                        <p class="text -md">John Doe</p>
-                        <p class="text -xs">John Doe</p>
+                        <img class="img -lg" :src="'/src/assets/img/icons/' + account.img + '.svg'" alt="" />
+
+                        <div class="account__list__item__info-extra">
+                            <p class="text -xl -bold">{{ account.title }}</p>
+                            <p class="text -md -medium">{{ account.site }}</p>
+                        </div>
                     </div>
 
-                    <p class="text -sm">John Doe</p>
+                    <p class="text -md -medium">{{ account.count }} Accounts</p>
 
-                    <p class="text -md">.....</p>
+                    <p class="text -xxs">.....</p>
                 </div>
             </div>
         </div>
@@ -38,5 +40,32 @@
 <script>
 export default {
     components: {},
+    data() {
+        return {
+            accounts: [
+                {
+                    id: 1,
+                    title: "Dropbox",
+                    site: "dropbox.com",
+                    count: 24,
+                    img: "ic_temp_avatar",
+                },
+                {
+                    id: 2,
+                    title: "Google",
+                    site: "google.com",
+                    count: 24,
+                    img: "ic_temp_avatar",
+                },
+                {
+                    id: 3,
+                    title: "Facebook",
+                    site: "facebook.com",
+                    count: 24,
+                    img: "ic_temp_avatar",
+                },
+            ],
+        };
+    },
 };
 </script>

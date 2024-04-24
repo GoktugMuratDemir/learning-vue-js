@@ -16,31 +16,51 @@
     }
   }
 
-  &.-logo {
+  &.-sm {
     @include width("8");
     @include height("8");
+
+    @include breakpoint("mobile") {
+      @include width("6");
+      @include height("6");
+    }
   }
 
-  &.-thumbnail {
-    @include width("4");
-    @include height("4");
+  &.-md {
+    @include width("12");
+    @include height("12");
+
+    @include breakpoint("mobile") {
+      @include width("8");
+      @include height("8");
+    }
   }
 
-  &.-product {
-    @include width("full");
-    @include height("1-2");
+  &.-lg {
+    @include width("16");
+    @include height("16");
+
+    @include breakpoint("mobile") {
+      @include width("12");
+      @include height("12");
+    }
   }
 
-  &.-avatar {
-    @include width("6");
-    @include height("6");
+  &.-xl {
+    @include width("24");
+    @include height("24");
+
+    @include breakpoint("mobile") {
+      @include width("16");
+      @include height("16");
+    }
+  }
+
+  &.-rounded {
     @include shape("full");
   }
 
-  &.-illustration {
-    @include width("full");
-    @include height("auto");
-  }
+
 
   &.-cover {
     object-fit: cover;
