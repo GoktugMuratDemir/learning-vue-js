@@ -72,8 +72,8 @@
             @include font-size("xs");
           }
   
-          &:focus + .login__form-group__label,
-          &:valid + .login__form-group__label {
+          &:focus + .auth__form-group__label,
+          &:valid + .auth__form-group__label {
             top: 0;
             @include font-size("xs");
             
