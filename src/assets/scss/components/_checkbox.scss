@@ -1,4 +1,5 @@
 .checkbox {
+
     @include width("full");
     @include font-size("xs");
     @include color("dark-400");

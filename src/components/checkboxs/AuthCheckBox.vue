@@ -3,7 +3,7 @@
         <label class="checkbox__label">
             <input class="checkbox__input" type="checkbox" name="" id="" />{{ label }}
         </label>
-        <a class="text -link" href="#">{{ linkText }}</a>
+        <a v-if="linkText" class="text -link" href="#">{{ linkText }}</a>
     </div>
 </template>
 
@@ -13,11 +13,11 @@ export default {
     props: {
         label: {
             type: String,
-            default: 'Remember Me'
+
         },
         linkText: {
             type: String,
-            default: 'Forgot Password?'
+
         }
     }
 }

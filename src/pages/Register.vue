@@ -1,17 +1,20 @@
 <template>
   <div class="auth">
     <div class="auth__wrapper">
-      <p class="text -xxxl -bold">Login</p>
+      <p class="text -xxxl -bold">Register</p>
       <form class="auth__form">
+        <AuthTextField icon="ic_mail" type="text" label="Username" />
+
         <AuthTextField icon="ic_mail" type="email" label="Email" />
 
         <AuthTextField icon="ic_password" type="password" label="Password" />
 
-        <AuthCheckBox label="Remember Me" linkText="Forgot Password?" />
+        <AuthCheckBox label="I agree to the terms & conditions" />
 
-        <button class="btn -contained -dark-400">Login</button>
+        <button class="btn -contained -dark-400">Register</button>
 
-        <AuthPrompt promptText="Don't have an account?" linkText="Register" />
+        <AuthPrompt promptText="Already have an account?" linkText="Login" />
+
       </form>
     </div>
   </div>
