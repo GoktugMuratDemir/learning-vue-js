@@ -1,48 +1,44 @@
 /**
- * Component for the login page.
- *
- * This component displays a login form with email and password fields.
- * Users can enter their credentials and click the "Login" button to log in.
- * The component also provides a "Remember Me" checkbox and a "Forgot Password?" link.
- * If users don't have an account, they can click the "Register" link to create one.
- *
- * @component
- * @example
- * <Login />
+ * @file Login.vue
+ * @description This file contains the login page component.
+ * The login page allows users to enter their email and password to log in.
+ * It also provides options for remembering the user's login and recovering a forgotten password.
  */
- 
+
 <template>
-  <div class="login">
-    <div class="login__wrapper">
+  <!-- The login page component -->
+  <div class="auth">
+    <div class="auth__wrapper">
+      <!-- Page title -->
       <p class="text -xxxl -bold">Login</p>
-      <form class="login__form">
+      <form class="auth__form">
         <!-- Email field -->
-        <div class="login__form-group">
+        <div class="auth__form-group">
           <img
-            class="login__form-group__icon img -icon"
+            class="auth__form-group__icon img -icon"
             src="../assets/img/icons/ic_mail.svg"
             alt=""
           />
-          <input class="login__form-group__input" type="email" required />
-          <label class="login__form-group__label">Email</label>
+          <input class="auth__form-group__input" type="email" required />
+          <label class="auth__form-group__label">Email</label>
         </div>
 
         <!-- Password field -->
-        <div class="login__form-group">
+        <div class="auth__form-group">
           <img
-            class="login__form-group__icon img -icon"
+            class="auth__form-group__icon img -icon"
             src="../assets/img/icons/ic_password.svg"
             alt=""
           />
-          <input class="login__form-group__input" type="password" required />
-          <label class="login__form-group__label">Password</label>
+          <input class="auth__form-group__input" type="password" required />
+          <label class="auth__form-group__label">Password</label>
         </div>
 
         <!-- Remember Me checkbox and Forgot Password link -->
-        <div class="login__form-actions">
-          <label class="login__form-actions__label">
+        <div class="auth__form-actions">
+          <label class="auth__form-actions__label">
             <input
-              class="login__form-actions__checkbox"
+              class="auth__form-actions__checkbox"
               type="checkbox"
               name=""
               id=""

@@ -6,8 +6,7 @@
  * The styles are organized using mixins and breakpoints for responsive design.
  */
 
- 
-.product-card-container {
+.product-card {
   @include height("screen");
   @include width("full");
   @include bg("light");
@@ -17,20 +16,20 @@
     @include height("full");
     @include p("y", "6");
   }
-}
 
-.product-card {
-  @include flex(row, nowrap, center, start);
-  @include bg("success");
-  @include gap("16");
-  @include bg("white");
-  @include shape("6");
-  @include p("all", "16");
-  @include width("1-2");
+  &__swapper {
+    @include flex(row, nowrap, center, start);
+    @include bg("success");
+    @include gap("16");
+    @include bg("white");
+    @include shape("6");
+    @include p("all", "16");
+    @include width("1-2");
 
-  @include breakpoint("mobile") {
-    @include flex(column, nowrap, start, start);
-    @include p("all", "8");
+    @include breakpoint("mobile") {
+      @include flex(column, nowrap, start, start);
+      @include p("all", "8");
+    }
   }
 
   &__detail {

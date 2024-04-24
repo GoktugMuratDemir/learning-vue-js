@@ -1,7 +1,7 @@
 <template>
     <!-- Product card -->
-    <div class="product-card-container">
-        <div class="product-card">
+    <div class="product-card">
+        <div class="product-card__swapper">
             <!-- Product image -->
             <img src="../assets/img/frames/Frame-1.png" class="img -cover" alt="frame" />
             <div class="product-card__detail">
