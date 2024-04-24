@@ -125,11 +125,11 @@
     }
   }
 
-  &.-light-weight {
+  &.-light {
     @include font-weight("light");
   }
 
-  &.-medium-weight {
+  &.-medium {
     @include font-weight("medium");
   }
 

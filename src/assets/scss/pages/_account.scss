@@ -35,8 +35,7 @@
       position: relative;
       border: 1px solid #c5c5f8;
       @include shape("4");
-      @include p("y", "4");
-      @include p("x", "3");
+      @include p("all", "4");
 
       &-input {
         border: none;
@@ -59,6 +58,7 @@
     &__info {
       @include flex(row, nowrap, space-between, center);
       @include gap("4");
+      
 
       &__notification {
         @include flex(row, nowrap, center, center);
@@ -96,10 +96,19 @@
       }
 
       &__info {
-        @include flex(row, nowrap, center, center);
+        @include flex(row, nowrap, start, center);
         @include gap("4");
+        @include width("1-4");
 
-        &-extra {
+        &-logo {
+          @include width("12");
+          @include height("12");
+          @include p("all","4");
+          @include shape("full");
+          @include bg("white");
+        }
+
+        &-desc {
           @include flex(column, nowrap, center, start);
           @include gap("1");
         }
