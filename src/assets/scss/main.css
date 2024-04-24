@@ -210,8 +210,8 @@ a:hover {
   background-color: white;
 }
 .btn.-outlined.-purple-300 {
-  color: #faf2fe;
-  border-color: #faf2fe;
+  color: #FAF2FE;
+  border-color: #FAF2FE;
 }
 .btn.-outlined.-purple-300:hover {
   background-color: white;
@@ -323,7 +323,7 @@ a:hover {
   background-color: #b8b8ff;
 }
 .btn.-contained.-purple-300 {
-  background-color: #faf2fe;
+  background-color: #FAF2FE;
   box-shadow: 0 8px 0 0 #d693f7;
   color: #ffffff;
 }
@@ -422,7 +422,7 @@ a:hover {
   color: #ebebff;
 }
 .text.-purple-300 {
-  color: #faf2fe;
+  color: #FAF2FE;
 }
 .text.-purple-400 {
   color: #8598fc;
@@ -732,18 +732,6 @@ a:hover {
 
 .flex {
   display: flex;
-}
-.flex .g-1 {
-  gap: 10px;
-}
-.flex .g-2 {
-  gap: 20px;
-}
-.flex .g-3 {
-  gap: 30px;
-}
-.flex .g-4 {
-  gap: 40px;
 }
 .flex.-row {
   flex-direction: row;
@@ -1071,7 +1059,7 @@ a:hover {
 }
 .account__header__search {
   position: relative;
-  border: 1px solid #C5C5F8;
+  border: 1px solid #c5c5f8;
   border-radius: 16px;
   padding-top: 16px;
   padding-bottom: 16px;
@@ -1131,11 +1119,27 @@ a:hover {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  border-radius: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
-.account__list__item-info {
+.account__list__item:hover {
+  background: #FAF2FE;
+  transition: all 0.5s ease;
+}
+.account__list__item__info {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
   gap: 16px;
+}
+.account__list__item__info-extra {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: start;
+  gap: 4px;
 }/*# sourceMappingURL=main.css.map */

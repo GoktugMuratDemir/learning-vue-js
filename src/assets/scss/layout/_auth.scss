@@ -21,9 +21,12 @@
     @include flex(column, nowrap, center, center);
     @include p("all", "10");
 
+    @include gap("8");
+
     @include breakpoint("mobile") {
       @include width("2-3");
       @include p("all", "8");
+      @include gap("6");
     }
   }
 
@@ -31,7 +34,7 @@
     @include width("full");
     @include p("x", "5");
     @include flex(column, nowrap, center, start);
-    @include gap("8");
+    @include gap("12");
 
     @include breakpoint("mobile") {
       @include gap("6");
