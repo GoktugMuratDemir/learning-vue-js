@@ -12,7 +12,7 @@
       <!-- Page title -->
       <p class="text -xxxl -bold">Login</p>
       <form class="auth__form">
-        
+
         <!-- Email field -->
         <AuthTextField icon="ic_mail" type="email" label="Email" />
 
@@ -20,12 +20,7 @@
         <AuthTextField icon="ic_password" type="password" label="Password" />
 
         <!-- Remember Me checkbox and Forgot Password link -->
-        <div class="auth__form-actions">
-          <label class="auth__form-actions__label">
-            <input class="auth__form-actions__checkbox" type="checkbox" name="" id="" />Remember Me
-          </label>
-          <a class="text -link" href="#"> Forgot Password?</a>
-        </div>
+        <AuthCheckBox label="Remember Me" linkText="Forgot Password?" />
 
         <!-- Login button -->
         <button class="btn -contained -dark-400">Login</button>
@@ -42,10 +37,12 @@
 
 <script>
 import AuthTextField from '../components/textfields/AuthTextfield.vue';
+import AuthCheckBox from '../components/checkboxs/AuthCheckBox.vue';
 
 export default {
   components: {
-    AuthTextField
+    AuthTextField,
+    AuthCheckBox
   }
 }
 </script>
