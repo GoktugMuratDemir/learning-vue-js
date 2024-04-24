@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import ProductCardInfoUiDesign from "../pages/ProductCardInfoUiDesign.vue";
 import Login from "../pages/Login.vue";
 import Register from "../pages/Register.vue";
+import Accounts from "../pages/Accounts.vue";
 
 export const routes = [
   {
@@ -14,6 +15,11 @@ export const routes = [
     path: "/register",
     name: "Register",
     component: Register,
+  },
+  {
+    path: "/accounts",
+    name: "Accounts",
+    component: Accounts,
   },
   {
     path: "/product-card-info-ui-design",

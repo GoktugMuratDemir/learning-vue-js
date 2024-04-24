@@ -1,8 +1,8 @@
 <template>
-    <div class="textfield">
-        <img class="textfield__icon img -icon" :src="'/src/assets/img/icons/' + icon + '.svg'" alt="" />
-        <input class="textfield__input" :type="type" required />
-        <label class="textfield__label">{{ label }}</label>
+    <div class="auth-textfield">
+        <img class="auth-textfield__icon img -icon" :src="'/src/assets/img/icons/' + icon + '.svg'" alt="" />
+        <input class="auth-textfield__input" :type="type" required />
+        <label class="auth-textfield__label">{{ label }}</label>
     </div>
 </template>
 
