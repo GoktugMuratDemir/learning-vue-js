@@ -11,16 +11,16 @@
 
         <button class="btn -contained -dark-400">Login</button>
 
-        <AuthPrompt promptText="Don't have an account?" linkText="Register" />
+        <AuthPrompt promptText="Don't have an account?" linkText="Register" linkHref="/register" />
       </form>
     </div>
   </div>
 </template>
 
 <script>
-import AuthTextField from "../components/textfields/AuthTextfield.vue";
-import AuthCheckBox from "../components/checkboxs/AuthCheckBox.vue";
-import AuthPrompt from "../components/propmts/AuthPrompt.vue";
+import AuthTextField from "@/components/textfields/AuthTextfield.vue";
+import AuthCheckBox from "@/components/checkboxs/AuthCheckBox.vue";
+import AuthPrompt from "@/components/propmts/AuthPrompt.vue";
 
 export default {
   components: {

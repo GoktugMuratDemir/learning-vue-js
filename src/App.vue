@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Header from './layouts/Header.vue'
+import Header from '@/layouts/Header.vue'
 </script>
 
 <template>
@@ -10,5 +10,5 @@ import Header from './layouts/Header.vue'
 </template>
 
 <style lang="scss">
-@import './assets/scss/main.scss';
+@import '@/assets/scss/main.scss';
 </style>

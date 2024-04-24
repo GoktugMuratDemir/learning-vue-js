@@ -1,7 +1,7 @@
 <template>
     <div>
         <p class="text -xs -medium -dark-400">
-            {{ promptText }}<router-link :to="linkHref" class="text -link">{{ linkText }}</router-link>
+            {{ promptText }}  <router-link :to="linkHref" class="text -link">{{ linkText }}</router-link>
         </p>
     </div>
 </template>
