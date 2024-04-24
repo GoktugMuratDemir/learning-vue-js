@@ -1,9 +1,9 @@
 /**
- * @file Login.vue
- * @description This file contains the login page component.
- * The login page allows users to enter their email and password to log in.
- * It also provides options for remembering the user's login and recovering a forgotten password.
- */
+* @file Login.vue
+* @description This file contains the login page component.
+* The login page allows users to enter their email and password to log in.
+* It also provides options for remembering the user's login and recovering a forgotten password.
+*/
 
 <template>
   <!-- The login page component -->
@@ -13,36 +13,16 @@
       <p class="text -xxxl -bold">Login</p>
       <form class="auth__form">
         <!-- Email field -->
-        <div class="auth__form-group">
-          <img
-            class="auth__form-group__icon img -icon"
-            src="../assets/img/icons/ic_mail.svg"
-            alt=""
-          />
-          <input class="auth__form-group__input" type="email" required />
-          <label class="auth__form-group__label">Email</label>
-        </div>
+        <AuthTextField icon="ic_mail" type="email" label="Email" />
 
         <!-- Password field -->
-        <div class="auth__form-group">
-          <img
-            class="auth__form-group__icon img -icon"
-            src="../assets/img/icons/ic_password.svg"
-            alt=""
-          />
-          <input class="auth__form-group__input" type="password" required />
-          <label class="auth__form-group__label">Password</label>
-        </div>
+        <AuthTextField icon="ic_password" type="password" label="Password" />
+
 
         <!-- Remember Me checkbox and Forgot Password link -->
         <div class="auth__form-actions">
           <label class="auth__form-actions__label">
-            <input
-              class="auth__form-actions__checkbox"
-              type="checkbox"
-              name=""
-              id=""
-            />Remember Me
+            <input class="auth__form-actions__checkbox" type="checkbox" name="" id="" />Remember Me
           </label>
           <a class="text -link" href="#"> Forgot Password?</a>
         </div>
@@ -58,3 +38,14 @@
     </div>
   </div>
 </template>
+
+
+<script>
+import AuthTextField from '../components/textfields/AuthTextfield.vue';
+
+export default {
+  components: {
+    AuthTextField
+  }
+}
+</script>
