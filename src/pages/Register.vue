@@ -3,7 +3,7 @@
     <div class="auth__wrapper">
       <p class="text -xxxl -bold">Register</p>
       <form class="auth__form">
-        <AuthTextField icon="ic_mail" type="text" label="Username" />
+        <AuthTextField icon="ic_user" type="text" label="Username" />
 
         <AuthTextField icon="ic_mail" type="email" label="Email" />
 
