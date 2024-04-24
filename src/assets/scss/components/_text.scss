@@ -39,121 +39,120 @@
  * - .-hide: Hides the text by setting display to none.
  */
 
- 
 .text {
   font-family: $font-primary;
-  color: map-get($colors, "black");
-  font-size: map-get($font-sizes, "md");
-  font-weight: map-get($font-weight, "regular");
+  @include color("black");
+  @include font-size("md");
+  @include font-weight("regular");
 
   &.-secondary {
-    color: map-get($colors, "secondary");
+    @include color("secondary");
   }
 
   &.-danger {
-    color: map-get($colors, "danger");
+    @include color("danger");
   }
 
   &.-light {
-    color: map-get($colors, "light");
+    @include color("light");
   }
 
   &.-dark {
-    color: map-get($colors, "dark");
+    @include color("dark");
   }
 
   &.-white {
-    color: map-get($colors, "white");
+    @include color("white");
   }
 
   &.-link {
-    font-size: map-get($font-sizes, "xs");
-    color: map-get($colors, "dark-400");
+    @include font-size("xs");
+    @include color("dark-400");
     text-decoration: underline;
     transition: 0.3s;
 
     @include breakpoint("mobile") {
-      font-size: map-get($font-sizes, "xxs");
+      @include font-size("xxs");
     }
 
     &:hover {
-      color: map-get($colors, "black-100");
+      @include color("black-100");
     }
   }
 
   &.-xxs {
-    font-size: map-get($font-sizes, "xxs");
+    @include font-size("xxs");
     line-height: map-get($line-heights, "none");
   }
 
   &.-xs {
-    font-size: map-get($font-sizes, "xs");
+    @include font-size("xs");
     line-height: map-get($line-heights, "none");
 
     @include breakpoint("mobile") {
-      font-size: map-get($font-sizes, "xxs");
+      @include font-size("xxs");
     }
   }
 
   &.-sm {
-    font-size: map-get($font-sizes, "sm");
+    @include font-size("sm");
     line-height: map-get($line-heights, "none");
 
     @include breakpoint("mobile") {
-      font-size: map-get($font-sizes, "xs");
+      @include font-size("xs");
     }
   }
 
   &.-lg {
-    font-size: map-get($font-sizes, "lg");
+    @include font-size("lg");
     line-height: map-get($line-heights, "none");
 
     @include breakpoint("mobile") {
-      font-size: map-get($font-sizes, "md");
+      @include font-size("md");
     }
   }
 
   &.-xl {
-    font-size: map-get($font-sizes, "xl");
+    @include font-size("xl");
     line-height: map-get($line-heights, "none");
 
     @include breakpoint("mobile") {
-      font-size: map-get($font-sizes, "lg");
+      @include font-size("lg");
     }
   }
 
   &.-xxl {
-    font-size: map-get($font-sizes, "xxl");
+    @include font-size("xxl");
     line-height: map-get($line-heights, "short");
 
     @include breakpoint("mobile") {
-      font-size: map-get($font-sizes, "xl");
+      @include font-size("xl");
     }
   }
 
   &.-xxxl {
-    font-size: map-get($font-sizes, "xxxl");
+    @include font-size("xxxl");
     line-height: map-get($line-heights, "none");
 
     @include breakpoint("mobile") {
-      font-size: map-get($font-sizes, "xxl");
+      @include font-size("xxl");
     }
   }
 
   &.-light-weight {
-    font-weight: map-get($font-weight, "light");
+    @include font-weight("light");
   }
 
   &.-medium-weight {
-    font-weight: map-get($font-weight, "medium");
+    @include font-weight("medium");
   }
 
   &.-semibold {
-    font-weight: map-get($font-weight, "semibold");
+    @include font-weight("semibold");
   }
 
   &.-bold {
-    font-weight: map-get($font-weight, "bold");
+    @include font-weight("bold");
   }
 
   &.-uppercase {

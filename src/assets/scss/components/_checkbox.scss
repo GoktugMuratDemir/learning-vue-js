@@ -1,28 +1,28 @@
 .checkbox {
+  @include width("full");
+  @include font-size("xs");
+  @include color("dark-400");
+  @include font-weight("medium");
+  @include flex(row, nowrap, space-between, center);
 
-    @include width("full");
-    @include font-size("xs");
+  @include breakpoint("mobile") {
+    @include font-size("xxs");
+  }
+
+  &__label {
     @include color("dark-400");
+    @include font-size("xs");
     @include font-weight("medium");
-    @include flex(row, nowrap, space-between, center);
+    @include flex(row, nowrap, center, center);
+    @include gap("1");
 
     @include breakpoint("mobile") {
       @include font-size("xxs");
     }
-
-    &__label {
-      @include color("dark-400");
-      @include font-size("xs");
-      @include font-weight("medium");
-      @include flex(row, nowrap, center, center);
-      @include gap("1");
-
-      @include breakpoint("mobile") {
-        @include font-size("xxs");
-      }
-    }
-
-    &__input {
-      accent-color: map-get($colors, "dark-400");
-    }
   }
+
+  &__input {
+    accent-color: map-get($colors, "dark-400");
+  }
+}
+
