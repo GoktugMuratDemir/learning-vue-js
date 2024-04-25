@@ -1,9 +1,9 @@
 @use "sass:math";
 
 $colors: (
-  "cornflowerBlue": #4788E9,
+  "cornflowerBlue": #4788e9,
   "ghost": #c9c9da,
-  "cinnabar": #E74C3C,
+  "cinnabar": #e74c3c,
   "mercury": #e5e5e5,
   "light-200": rgba(255, 255, 255, 0.5),
   "portGore": #191847,
@@ -16,6 +16,12 @@ $colors: (
   "titanWhite": #ebebff,
   "selago": #faf2fe,
   "malibu": #8598fc,
+  "mirage": #1a2036,
+  "pigeon-post": #b1b9d8,
+  "ebony-clay": #252b42,
+  "ebony": #111628,
+  "pickled-bluewood": #2e3750,
+  "heliotrope": #8e66ff,
 );
 
 $font-primary: "Poppins", sans-serif;
