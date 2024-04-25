@@ -76,7 +76,6 @@
     }
   }
 
-
   &__list {
     @include flex(row, wrap, flex-start, flex-start);
     @include gap("5");
