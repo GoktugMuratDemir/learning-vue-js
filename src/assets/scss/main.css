@@ -1282,8 +1282,8 @@ a:hover {
   align-items: center;
 }
 .activite__swapper {
-  width: 975px;
-  width: 80%;
+  width: 1040px;
+  height: 662px;
   background: #252b42;
   border-radius: 24px;
   padding: 36px;
@@ -1294,9 +1294,8 @@ a:hover {
   gap: 40px;
 }
 .activite__sidebar {
-  width: 10%;
-  height: 100%;
-  padding: 15px;
+  height: -webkit-fill-available;
+  padding: 16px;
   border-radius: 20px;
   background: #1a2036;
   display: flex;
@@ -1306,14 +1305,14 @@ a:hover {
   gap: 15px;
 }
 .activite__sidebar-item {
-  padding: 13px;
-  border-radius: 10px;
+  padding: 12px;
+  border-radius: 12px;
 }
 .activite__sidebar-item.-active {
   background: #252b42;
 }
 .activite__sidebar-item:hover {
-  border-radius: 10px;
+  border-radius: 12px;
   background: #252b42;
   transition: all 0.3s;
 }
@@ -1323,11 +1322,10 @@ a:hover {
   flex-flow: column nowrap;
   justify-content: space-between;
   align-items: normal;
-  gap: 35px;
+  gap: 36px;
   padding-top: 20px;
 }
 .activite__header {
-  height: 52px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -1338,7 +1336,7 @@ a:hover {
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 .activite__back-btn-name {
   font-size: 26px;
@@ -1367,8 +1365,8 @@ a:hover {
 .activite__list {
   display: flex;
   flex-flow: row wrap;
-  justify-content: normal;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 20px;
 }
 .activite__item {
