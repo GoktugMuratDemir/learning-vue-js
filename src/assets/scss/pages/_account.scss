@@ -1,7 +1,7 @@
 .account {
   @include min-height("screen");
   @include width("full");
-  @include bg("purple-200");
+  @include bg("titanWhite");
   @include flex(column, nowrap, center, center);
 
   &__wrapper {
@@ -27,91 +27,89 @@
     }
   }
 
+  // section-1
   &__header {
     @include width("full");
     @include flex(row, nowrap, space-between, center);
+  }
 
-    &__search {
-      position: relative;
-      border: 1px solid #c5c5f8;
-      @include shape("4");
-      @include p("all", "4");
+  &__search {
+    position: relative;
+    border: 1px solid #c5c5f8;
+    @include shape("4");
+    @include p("all", "4");
 
-      &-input {
-        border: none;
-        outline: none;
-        background: transparent;
-        @include font-size("md");
-        @include color("dark-400");
-        @include font-weight("medium");
-        @include p("l", "7");
-      }
-
-      &-icon {
-        position: absolute;
-        left: map-get($sizes, "2");
-        top: 50%;
-        transform: translateY(-50%);
-      }
+    &-input {
+      border: none;
+      outline: none;
+      background: transparent;
+      @include font-size("md");
+      @include color("bigStone");
+      @include font-weight("medium");
+      @include p("l", "7");
     }
 
-    &__info {
-      @include flex(row, nowrap, space-between, center);
-      @include gap("4");
-      
-
-      &__notification {
-        @include flex(row, nowrap, center, center);
-        position: relative;
-
-        &-badge {
-          width: 4px;
-          height: 4px;
-          position: absolute;
-          top: 0;
-          right: 0;
-          @include bg("danger");
-          @include color("white");
-          @include shape("1-2");
-        }
-      }
+    &-icon {
+      position: absolute;
+      left: map-get($sizes, "2");
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
 
+  &__actions {
+    @include flex(row, nowrap, space-between, center);
+    @include gap("4");
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 10%;
+      left: 27%;
+      height: 4px;
+      width: 4px;
+      background-color: red;
+      border-radius: 50%;
+    }
+  }
+
+  // section-2
   &__list {
     @include flex(column, nowrap, center, center);
     @include gap("3");
     @include width("full");
+  }
 
-    &__item {
+  &__item {
+    @include width("full");
+    @include flex(row, nowrap, space-between, center);
+    @include shape("4");
+    @include p("x", "5");
+    @include p("y", "4");
+
+    &:hover {
+      @include bg("selago");
+      transition: all 0.5s ease;
+    }
+
+    &__present {
       @include width("full");
-      @include flex(row, nowrap, space-between, center);
-      @include shape("4");
-      @include p("x", "5");
-      @include p("y", "4");
+      @include flex(row, nowrap, start, center);
+      @include gap("4");
+      @include width("1-4");
 
-      &:hover {
-        @include bg("purple-300");
-        transition: all 0.5s ease;
+      &-logo {
+        @include width("12");
+        @include height("12");
+        @include p("all", "4");
+        @include shape("full");
+        @include bg("white");
       }
 
-      &__info {
-        @include flex(row, nowrap, start, center);
-        @include gap("4");
-        @include width("1-4");
-
-        &-logo {
-          @include width("12");
-          @include height("12");
-          @include p("all","4");
-          @include shape("full");
-          @include bg("white");
-        }
-
-        &-desc {
-          @include flex(column, nowrap, center, start);
-          @include gap("1");
-        }
+      &-desc {
+        @include flex(column, nowrap, center, start);
+        @include gap("1");
       }
     }
   }

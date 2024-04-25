@@ -1,7 +1,7 @@
 .checkbox {
   @include width("full");
   @include font-size("xs");
-  @include color("dark-400");
+  @include color("bigStone");
   @include font-weight("medium");
   @include flex(row, nowrap, space-between, center);
 
@@ -10,7 +10,7 @@
   }
 
   &__label {
-    @include color("dark-400");
+    @include color("bigStone");
     @include font-size("xs");
     @include font-weight("medium");
     @include flex(row, nowrap, center, center);
@@ -22,7 +22,7 @@
   }
 
   &__input {
-    accent-color: map-get($colors, "dark-400");
+    accent-color: map-get($colors, "bigStone");
   }
 }
 

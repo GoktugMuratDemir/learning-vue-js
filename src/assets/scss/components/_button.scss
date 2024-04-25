@@ -55,8 +55,8 @@
         background-color: $value;
         box-shadow: 0 map-get($sizes, "2") 0 0 darken($value, 20%);
         color: if(
-          $color == "light" or $color == "white",
-          map-get($colors, "dark"),
+          $color == "mercury" or $color == "white",
+          map-get($colors, "portGore"),
           map-get($colors, "white")
         );
 

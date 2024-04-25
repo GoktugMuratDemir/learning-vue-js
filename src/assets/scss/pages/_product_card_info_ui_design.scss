@@ -9,7 +9,7 @@
 .product-card {
   @include height("screen");
   @include width("full");
-  @include bg("light");
+  @include bg("mercury");
   @include flex(column, nowrap, center, center);
 
   @include breakpoint("mobile") {
@@ -19,7 +19,7 @@
 
   &__swapper {
     @include flex(row, nowrap, center, start);
-    @include bg("success");
+    @include bg("caribbeanGreen");
     @include gap("16");
     @include bg("white");
     @include shape("6");
@@ -67,7 +67,7 @@
       @include width("2");
       @include height("2");
       @include shape("1-2");
-      @include bg("success");
+      @include bg("caribbeanGreen");
     }
   }
 

@@ -42,10 +42,10 @@
     }
 
     .router-link-active {
-      @include color("success");
+      @include color("caribbeanGreen");
 
       &::after {
-        @include bg("success");
+        @include bg("caribbeanGreen");
       }
     }
   }

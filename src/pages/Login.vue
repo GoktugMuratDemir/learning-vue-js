@@ -9,7 +9,7 @@
 
         <AuthCheckBox label="Remember Me" linkText="Forgot Password?" />
 
-        <button class="btn -contained -dark-400">Login</button>
+        <button class="btn -contained -bigStone">Login</button>
 
         <AuthPrompt promptText="Don't have an account?" linkText="Register" linkHref="/register" />
       </form>

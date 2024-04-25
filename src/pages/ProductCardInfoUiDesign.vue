@@ -19,7 +19,7 @@
                     </p>
                 </div>
                 <!-- Add to cart button -->
-                <button class="btn -contained -primary">Add to cart</button>
+                <button class="btn -contained -cornflowerBlue">Add to cart</button>
                 <!-- Stock availability -->
                 <p class="product-card__stock text -sm -semibold">50+ pcs. in stock.</p>
                 <!-- Actions - Buttons: Add to cart and Add to wishlist -->

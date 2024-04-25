@@ -11,7 +11,7 @@
 
         <AuthCheckBox label="I agree to the terms & conditions" />
 
-        <button class="btn -contained -dark-400">Register</button>
+        <button class="btn -contained -bigStone">Register</button>
 
         <AuthPrompt promptText="Already have an account?" linkText="Login" linkHref="/" />
       </form>

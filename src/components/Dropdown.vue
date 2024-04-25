@@ -32,7 +32,7 @@ export default {
     color: white;
     cursor: pointer;
     font-size: 16px;
-    padding: 16px;
+    padding: 12px;
 
     &:hover,
     &:focus {
@@ -41,11 +41,14 @@ export default {
   }
 
   &__content {
+    position: absolute;
+    top: 36px;
+    right: 0;
     background-color: #f9f9f9;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     display: none;
     min-width: 160px;
-    position: absolute;
+    
     z-index: 1;
 
     a {

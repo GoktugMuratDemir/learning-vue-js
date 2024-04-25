@@ -38,7 +38,7 @@
   }
 
   &.-primary {
-    @include bg("primary");
+    @include bg("cornflowerBlue");
   }
 
   &.-dark {
@@ -46,10 +46,10 @@
   }
 
   &.-danger {
-    @include bg("danger");
+    @include bg("cinnabar");
   }
 
   &.-light {
-    @include bg("light");
+    @include bg("mercury");
   }
 }

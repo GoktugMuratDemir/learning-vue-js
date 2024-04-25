@@ -1,21 +1,21 @@
 @use "sass:math";
 
 $colors: (
-  "primary": #4788e9,
-  "secondary": #c9c9da,
-  "danger": #e74c3c,
-  "light": #e5e5e5,
+  "cornflowerBlue": #4788E9,
+  "ghost": #c9c9da,
+  "cinnabar": #E74C3C,
+  "mercury": #e5e5e5,
   "light-200": rgba(255, 255, 255, 0.5),
-  "dark": #191847,
+  "portGore": #191847,
   "dark-200": rgb(25, 24, 71, 0.7),
-  "dark-400": #162938,
+  "bigStone": #162938,
   "white": #ffffff,
   "black": #000000,
   "black-100": rgba(0, 0, 0, 0.5),
-  "success": #00d98b,
-  "purple-200": #ebebff,
-  "purple-300": #faf2fe,
-  "purple-400": #8598fc,
+  "caribbeanGreen": #00d98b,
+  "titanWhite": #ebebff,
+  "selago": #faf2fe,
+  "malibu": #8598fc,
 );
 
 $font-primary: "Poppins", sans-serif;
@@ -40,7 +40,7 @@ $line-heights: (
 );
 
 $font-weight: (
-  "light": 300,
+  "mercury": 300,
   "regular": 400,
   "medium": 500,
   "semibold": 600,
