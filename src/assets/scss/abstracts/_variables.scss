@@ -78,8 +78,8 @@ $sizes: (
   "fit": fit-content,
 ) !default;
 
-@for $i from 1 through 5 {
-  @for $j from $i through 5 {
+@for $i from 1 through 10 {
+  @for $j from $i through 10 {
     $sizes: map-merge($sizes, ($i + "-" + $j: percentage(math.div($i, $j))));
   }
 }

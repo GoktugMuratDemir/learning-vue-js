@@ -1,21 +1,22 @@
 .activite {
   @include bg("mirage");
-  height: 100vh;
+  @include min-height("screen");
   width: 100%;
   @include flex;
 
   &__swapper {
-    height: 662px;
+    // height: 662px;
     width: 975px;
+    @include width("4-5");
     @include bg("ebony-clay");
-    border-radius: 25px;
-    padding: 35px;
+    @include shape("6");
+    @include p("all","9");
     @include flex(row, nowrap, flex-start, flex-start);
-    gap: 40px;
+    @include gap("10");
   }
 
   &__sidebar {
-    width: 88px;
+    @include width("1-10");
     height: 100%;
     padding: 15px;
     border-radius: 20px;
