@@ -31,24 +31,22 @@
       </header>
       <p class="text -xxl -bold -center">Accounts</p>
       <section class="account__list">
-        <AccountItem v-for="account in accounts" :key="account.id" :account="account" />
+        <AccountItem
+          v-for="account in accounts"
+          :key="account.id"
+          :account="account"
+        />
       </section>
     </div>
   </div>
 </template>
 
 <script>
-import Dropdown from "../components/Dropdown.vue";
-import Popover from "../components/Popover.vue";
-import CustomDropdown from "../components/CustomDropdown.vue";
-import AccountItem from "../sections/AccountItem.vue";
+import AccountItem from '@/sections/AccountItem.vue';
 
 export default {
   components: {
-    Dropdown,
-    Popover,
-    CustomDropdown,
-    AccountItem
+    AccountItem,
   },
   data() {
     return {

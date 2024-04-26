@@ -9,6 +9,7 @@
 
 <script>
 export default {
+    name: "CustomPopover",
     data() {
         return {
             show: false

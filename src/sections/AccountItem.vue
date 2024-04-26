@@ -1,11 +1,7 @@
 <template>
   <div class="account__item">
     <div class="account__item__present">
-      <img
-        class="account__item__present-logo"
-        :src="'/src/assets/img/logos/logo_' + account.img + '.png'"
-        alt=""
-      />
+      <img class="account__item__present-logo" :src="'/src/assets/img/logos/logo_' + account.img + '.png'" alt="" />
 
       <div class="account__item__present-desc">
         <p class="text -xl -bold">{{ account.title }}</p>
@@ -15,7 +11,9 @@
 
     <p class="text -md -medium">{{ account.count }} accounts</p>
 
-    <CustomDropdown :id="account.id" />
+    <DropdownWithSelectBox :id="account.id">
+      Content
+    </DropdownWithSelectBox>
 
     <!-- <Popover /> -->
 
@@ -24,16 +22,12 @@
 </template>
 
 <script>
-import Dropdown from "../components/Dropdown.vue";
-import Popover from "../components/Popover.vue";
-import CustomDropdown from "../components/CustomDropdown.vue";
+import DropdownWithSelectBox from "@/components/dropdowns/DropdownWithSelectBox.vue";
 
 export default {
   name: "AccountItem",
   components: {
-    Dropdown,
-    Popover,
-    CustomDropdown,
+    DropdownWithSelectBox,
   },
   props: {
     account: {

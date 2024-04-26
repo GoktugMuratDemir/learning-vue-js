@@ -19,7 +19,8 @@
       map-get($colors, "black-100")
     );
 
-    @include p("all", "24");
+    @include p("y", "12");
+    @include p("x", "24");
 
     @include breakpoint("mobile") {
       @include width("2-3");
@@ -67,8 +68,8 @@
       position: absolute;
       top: 10%;
       left: 27%;
-      height: 4px;
-      width: 4px;
+      height: 8px;
+      width: 8px;
       background-color: red;
       border-radius: 50%;
     }
