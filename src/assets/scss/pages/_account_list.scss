@@ -6,7 +6,7 @@
 
   &__wrapper {
     @include flex(column, nowrap, center, start);
-    @include gap("8");
+    @include gap("10");
     @include bg("white");
     @include width("1-2");
     @include border(2px, solid, map-get($colors, "light-200"));
@@ -19,7 +19,7 @@
       map-get($colors, "black-100")
     );
 
-    @include p("all", "10");
+    @include p("all", "24");
 
     @include breakpoint("mobile") {
       @include width("2-3");
@@ -59,7 +59,7 @@
 
   &__actions {
     @include flex(row, nowrap, space-between, center);
-    @include gap("4");
+    @include gap("8");
     position: relative;
 
     &::before {

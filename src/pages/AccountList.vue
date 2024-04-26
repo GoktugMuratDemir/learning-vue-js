@@ -31,30 +31,7 @@
       </header>
       <p class="text -xxl -bold -center">Accounts</p>
       <section class="account__list">
-        <div
-          class="account__item"
-          v-for="(account, index) in accounts"
-          :key="index"
-        >
-          <div class="account__item__present">
-            <img
-              class="account__item__present-logo"
-              :src="'/src/assets/img/logos/logo_' + account.img + '.png'"
-              alt=""
-            />
-
-            <div class="account__item__present-desc">
-              <p class="text -xl -bold">{{ account.title }}</p>
-              <p class="text -md -medium -dark-200">{{ account.site }}</p>
-            </div>
-          </div>
-
-          <p class="text -md -medium">{{ account.count }} accounts</p>
-
-          <Popover />
-
-          <Dropdown />
-        </div>
+        <AccountItem v-for="account in accounts" :key="account.id" :account="account" />
       </section>
     </div>
   </div>
@@ -63,11 +40,15 @@
 <script>
 import Dropdown from "../components/Dropdown.vue";
 import Popover from "../components/Popover.vue";
+import CustomDropdown from "../components/CustomDropdown.vue";
+import AccountItem from "../sections/AccountItem.vue";
 
 export default {
   components: {
     Dropdown,
     Popover,
+    CustomDropdown,
+    AccountItem
   },
   data() {
     return {
