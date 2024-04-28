@@ -114,4 +114,25 @@
       }
     }
   }
+
+  &__options {
+    @include flex(column, nowrap, center, center);
+
+    @include gap("3");
+
+    &__item {
+      // @include width("full");
+      @include flex(row, nowrap, space-between, center);
+      @include gap("4");
+      width: -webkit-fill-available;
+      @include p("all", "4");
+      cursor: pointer;
+   
+
+      &:hover {
+        @include bg("selago");
+        transition: all 0.5s ease;
+      }
+    }
+  }
 }
