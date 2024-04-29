@@ -3,43 +3,69 @@
     <div class="account__wrapper">
       <header class="account__header">
         <div class="account__search">
-          <img class="account__search-icon img -icon" src="@/assets/img/icons/ic_search.svg" alt="" />
-          <input class="account__search-input" type="text" placeholder="Search" v-model="searchTerm" />
+          <img
+            class="account__search-icon img -icon"
+            src="@/assets/img/icons/ic_search.svg"
+            alt=""
+          />
+          <input
+            class="account__search-input"
+            type="text"
+            placeholder="Search"
+            v-model="searchTerm"
+          />
         </div>
 
         <div class="account__actions">
           <div>
-            <img @click="showModalNotification = true" class="img -sm" src="@/assets/img/icons/ic_notification.svg"
-              alt="" />
-            <CustomModal v-if="showModalNotification" @close="closeModal">
+            <img
+              @click="openModal('notification')"
+              class="img -sm"
+              src="@/assets/img/icons/ic_notification.svg"
+              alt=""
+            />
+            <CustomModal
+              v-if="modalType === 'notification'"
+              @close="closeModal"
+            >
               <h1>IMG</h1>
             </CustomModal>
           </div>
 
-          <img class="img -md" src="@/assets/img/icons/ic_temp_avatar.svg" alt="" />
+          <img
+            class="img -md"
+            src="@/assets/img/icons/ic_temp_avatar.svg"
+            alt=""
+          />
         </div>
       </header>
       <div class="account__add">
         <p class="text -xxl -bold -center">Accounts</p>
 
         <div>
-          <button class="btn -contained -cornflowerBlue" @click="showModalAdd = true">
+          <button
+            @click="openModal('add')"
+            class="btn -contained -cornflowerBlue"
+          >
             Add Account
           </button>
-          <CustomModal v-if="showModalAdd" @close="closeModal">
+          <CustomModal v-if="modalType === 'add'" @close="closeModal">
             <h1>Modal Content</h1>
             <p>This is some modal content.</p>
           </CustomModal>
         </div>
       </div>
       <section class="account__list">
-        <AccountItem :account="account" v-for="account in filteredAccounts" :key="account.id"
-          :deleteAccount="deleteAccount" />
+        <AccountItem
+          :account="account"
+          v-for="account in filteredAccounts"
+          :key="account.id"
+          :deleteAccount="deleteAccount"
+        />
         <h1 v-if="filteredAccounts.length">{{ searchTerm }}</h1>
         <div v-else>Data not found</div>
       </section>
     </div>
-    
   </div>
 </template>
 
@@ -63,10 +89,8 @@ export default defineComponent({
   },
   setup() {
     const searchTerm = ref("");
-    const modalName = ref("");
-    const showModalNotification = ref(false);
-    const showModalAdd = ref(false);
-    const accounts = ref < Account[] > ([
+    const modalType = ref("");
+    const accounts = ref<Account[]>([
       {
         id: 1,
         title: "Dropbox",
@@ -90,15 +114,12 @@ export default defineComponent({
       },
     ]);
 
-    const closeModal = () => {
-      showModalNotification.value = false;
-      showModalAdd.value = false;
+    const openModal = (type: string) => {
+      modalType.value = type;
     };
 
-    const openModal = (modalProps: string) => {
-      modalName.value = modalProps;
-      showModalNotification.value = true;
-      showModalAdd.value = true;
+    const closeModal = () => {
+      modalType.value = "";
     };
 
     const deleteAccount = (accountId: number) => {
@@ -130,9 +151,9 @@ export default defineComponent({
 
     return {
       searchTerm,
-      showModalNotification,
-      showModalAdd,
+      modalType,
       accounts,
+      openModal,
       closeModal,
       deleteAccount,
       addAccount,
