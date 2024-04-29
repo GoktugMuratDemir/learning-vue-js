@@ -15,11 +15,11 @@
       <div class="account__options">
         <div class="account__options__item">
           <p class="text -sm -semibold">Edit</p>
-          <img class="img -icon" src="@/assets/img/icons/ic_edit.svg" alt="" />
+          <img class="img -xs" src="@/assets/img/icons/ic_edit.svg" alt="" />
         </div>
         <div class="account__options__item" @click="deleteAccount(account.id)">
           <p class="text -sm -semibold">Delete</p>
-          <img class="img -icon" src="@/assets/img/icons/ic_delete.svg" alt="" />
+          <img class="img -xs" src="@/assets/img/icons/ic_delete.svg" alt="" />
         </div>
       </div>
     </DropdownWithSelectBox>

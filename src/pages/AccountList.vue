@@ -8,12 +8,30 @@
         </div>
 
         <div class="account__actions">
-          <img class="img -sm" src="@/assets/img/icons/ic_notification.svg" alt="" />
+          <div>
+            <img @click="showModalNotification = true" class="img -sm" src="@/assets/img/icons/ic_notification.svg"
+              alt="" />
+            <CustomModal v-if="showModalNotification" @close="closeModal">
+              <h1>IMG</h1>
+            </CustomModal>
+          </div>
 
           <img class="img -md" src="@/assets/img/icons/ic_temp_avatar.svg" alt="" />
         </div>
       </header>
-      <p class="text -xxl -bold -center">Accounts</p>
+      <div class="account__add">
+        <p class="text -xxl -bold -center">Accounts</p>
+
+        <div>
+          <button class="btn -contained -cornflowerBlue" @click="showModalAdd = true">
+            Add Account
+          </button>
+          <CustomModal v-if="showModalAdd" @close="closeModal">
+            <h1>Modal Content</h1>
+            <p>This is some modal content.</p>
+          </CustomModal>
+        </div>
+      </div>
       <section class="account__list">
         <AccountItem :account="account" v-for="account in filteredAccounts" :key="account.id"
           :deleteAccount="deleteAccount" />
@@ -21,70 +39,106 @@
         <div v-else>Data not found</div>
       </section>
     </div>
+    
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent, ref, computed } from "vue";
 import AccountItem from "@/sections/AccountItem.vue";
-import { computed } from "vue";
+import CustomModal from "@/components/modals/CustomModal.vue";
 
-export default {
+interface Account {
+  id: number;
+  title: string;
+  site: string;
+  count: number;
+  img: string;
+}
+
+export default defineComponent({
   components: {
     AccountItem,
+    CustomModal,
   },
-  data() {
-    return {
-      searchTerm: "",
-      accounts: [
-        {
-          id: 1,
-          title: "Dropbox",
-          site: "dropbox.com",
-          count: 24,
-          img: "dropbox",
-        },
+  setup() {
+    const searchTerm = ref("");
+    const modalName = ref("");
+    const showModalNotification = ref(false);
+    const showModalAdd = ref(false);
+    const accounts = ref < Account[] > ([
+      {
+        id: 1,
+        title: "Dropbox",
+        site: "dropbox.com",
+        count: 24,
+        img: "dropbox",
+      },
+      {
+        id: 2,
+        title: "Pinterest",
+        site: "pinterest.com",
+        count: 12,
+        img: "pinterest",
+      },
+      {
+        id: 3,
+        title: "Microsoft",
+        site: "microsft.com",
+        count: 3,
+        img: "microsoft",
+      },
+    ]);
 
-        {
-          id: 2,
-          title: "Pinterest",
-          site: "pinterest.com",
-          count: 12,
-          img: "pinterest",
-        },
-
-        {
-          id: 3,
-          title: "Microsoft",
-          site: "microsft.com",
-          count: 3,
-          img: "microsoft",
-        },
-      ],
+    const closeModal = () => {
+      showModalNotification.value = false;
+      showModalAdd.value = false;
     };
-  },
 
-  methods: {
-    deleteAccount(accountId) {
-      this.accounts = this.accounts.filter(
+    const openModal = (modalProps: string) => {
+      modalName.value = modalProps;
+      showModalNotification.value = true;
+      showModalAdd.value = true;
+    };
+
+    const deleteAccount = (accountId: number) => {
+      accounts.value = accounts.value.filter(
         (account) => account.id !== accountId
       );
-    },
-    updateAccount(newAccount) {
-      const index = this.accounts.findIndex(account => account.id === newAccount.id);
-      if (index !== -1) {
-        this.$set(this.accounts, index, newAccount);
-      }
-    }
-  },
+    };
 
-  computed: {
-    filteredAccounts() {
-      return this.accounts.filter((account) => {
+    const addAccount = (newAccount: Account) => {
+      accounts.value.push(newAccount);
+    };
+
+    const updateAccount = (updatedAccount: Account) => {
+      const index = accounts.value.findIndex(
+        (account) => account.id === updatedAccount.id
+      );
+      if (index !== -1) {
+        accounts.value[index] = updatedAccount;
+      }
+    };
+
+    const filteredAccounts = computed(() => {
+      return accounts.value.filter((account) => {
         return account.title
           .toLowerCase()
-          .includes(this.searchTerm.toLowerCase());
+          .includes(searchTerm.value.toLowerCase());
       });
-    },
+    });
+
+    return {
+      searchTerm,
+      showModalNotification,
+      showModalAdd,
+      accounts,
+      closeModal,
+      deleteAccount,
+      addAccount,
+      updateAccount,
+      filteredAccounts,
+    };
   },
-};
+});
 </script>

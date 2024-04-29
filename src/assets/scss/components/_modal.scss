@@ -1,0 +1,37 @@
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  @include width("full");
+  @include height("full");
+  overflow: auto;
+  @include bg("black-100");
+
+  &__content {
+    @include bg("white");
+    @include shape("3");
+    margin: 15% auto;
+    @include p("all", "6");
+    @include width("3-4");
+    position: relative;
+
+    &-btn {
+      position: absolute;
+      top: map-get($sizes, "6");
+      right: map-get($sizes, "6");
+      border: none;
+      outline: none;
+      cursor: pointer;
+      @include font-size("lg");
+      @include font-weight("bold");
+      @include shape("3");
+      @include p("all", "2");
+
+      &:hover {
+        @include bg("cinnabar");
+        @include color("white");
+      }
+    }
+  }
+}

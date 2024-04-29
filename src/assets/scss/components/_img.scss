@@ -17,6 +17,16 @@
     }
   }
 
+  &.-xs {
+    @include width("4");
+    @include height("4");
+
+    @include breakpoint("mobile") {
+      @include width("3");
+      @include height("3");
+    }
+  }
+
   &.-sm {
     @include width("8");
     @include height("8");
