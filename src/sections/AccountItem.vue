@@ -1,7 +1,11 @@
 <template>
   <div class="account__item">
     <div class="account__item__present">
-      <img class="account__item__present-logo" :src="'/src/assets/img/logos/logo_' + account.img + '.png'" alt="" />
+      <img
+        class="account__item__present-logo"
+        :src="getImgPath(account.logo)"
+        alt=""
+      />
 
       <div class="account__item__present-desc">
         <p class="text -xl -bold">{{ account.title }}</p>
@@ -43,9 +47,15 @@ export default {
       type: Object,
       required: true,
     },
-    deleteAccount : {
+    deleteAccount: {
       type: Function,
       required: true,
+    },
+  },
+  computed: {
+    getImgPath() {
+      // return (img) => require(`../assets/img/logos/${img}`);
+      return (img) => `/src/assets/img/logos/${img}`;
     },
   },
 };

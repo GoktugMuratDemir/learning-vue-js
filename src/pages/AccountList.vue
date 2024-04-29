@@ -79,7 +79,7 @@ interface Account {
   title: string;
   site: string;
   count: number;
-  img: string;
+  logo: string;
 }
 
 export default defineComponent({
@@ -96,21 +96,21 @@ export default defineComponent({
         title: "Dropbox",
         site: "dropbox.com",
         count: 24,
-        img: "dropbox",
+        logo: "logo_dropbox.png",
       },
       {
         id: 2,
         title: "Pinterest",
         site: "pinterest.com",
         count: 12,
-        img: "pinterest",
+        logo: "logo_pinterest.png",
       },
       {
         id: 3,
         title: "Microsoft",
         site: "microsft.com",
         count: 3,
-        img: "microsoft",
+        logo: "logo_microsoft.png",
       },
     ]);
 
