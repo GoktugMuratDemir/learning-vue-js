@@ -3,7 +3,7 @@
         <input type="checkbox" name="toggle" :id="`checkbox-${id}`" />
 
         <label class="dropdown-label" :for="`checkbox-${id}`">
-            <img class="img -sm" :src="`/src/assets/img/icons/${icon}.svg`" alt="" />
+            <img class="img -sm" :src="`/img/icons/${icon}.svg`" alt="" />
         </label>
         <div class="dropdown__content">
             <slot></slot>
