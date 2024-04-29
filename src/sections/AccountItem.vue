@@ -54,8 +54,8 @@ export default {
   },
   computed: {
     getImgPath() {
-      // return (img) => require(`../assets/img/logos/${img}`);
-      return (img) => `/src/assets/img/logos/${img}`;
+      // return (img) => require(`@/assets/img/logos/${img}`);
+      return (img) => `/img/logos/${img}`;
     },
   },
 };
