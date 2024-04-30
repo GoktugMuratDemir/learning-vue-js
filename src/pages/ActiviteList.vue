@@ -145,36 +145,36 @@
         </header>
         <div class="activite__list">
           <div class="activite__item -create">
-            <img class="activite__item-img" src="@/assets/img/frames/Frame-added.png" alt="Cuisine" />
+            <img class="activite__item-img" src="/img/frames/Frame-added.png" alt="Cuisine" />
             <p class="activite__item-count">create group</p>
           </div>
           <div class="activite__item">
-            <img class="activite__item-img" src="@/assets/img/frames/Frame-2.png" alt="Cuisine" />
+            <img class="activite__item-img" src="/img/frames/Frame-2.png" alt="Cuisine" />
             <p class="activite__item-title">Art</p>
             <p class="activite__item-count">6 members</p>
           </div>
           <div class="activite__item -active" data-count="1">
-            <img class="activite__item-img" src="@/assets/img/frames/Frame-2.png" alt="Cuisine" />
+            <img class="activite__item-img" src="/img/frames/Frame-2.png" alt="Cuisine" />
             <p class="activite__item-title">Art</p>
             <p class="activite__item-count">6 members</p>
           </div>
           <div class="activite__item">
-            <img class="activite__item-img" src="@/assets/img/frames/Frame-2.png" alt="Cuisine" />
+            <img class="activite__item-img" src="/img/frames/Frame-2.png" alt="Cuisine" />
             <p class="activite__item-title">Art</p>
             <p class="activite__item-count">6 members</p>
           </div>
           <div class="activite__item -active" data-count="4">
-            <img class="activite__item-img" src="@/assets/img/frames/Frame-2.png" alt="Cuisine" />
+            <img class="activite__item-img" src="/img/frames/Frame-2.png" alt="Cuisine" />
             <p class="activite__item-title">Art</p>
             <p class="activite__item-count">6 members</p>
           </div>
           <div class="activite__item">
-            <img class="activite__item-img" src="@/assets/img/frames/Frame-2.png" alt="Cuisine" />
+            <img class="activite__item-img" src="/img/frames/Frame-2.png" alt="Cuisine" />
             <p class="activite__item-title">Art</p>
             <p class="activite__item-count">6 members</p>
           </div>
           <div class="activite__item -active" data-count="100">
-            <img class="activite__item-img" src="@/assets/img/frames/Frame-2.png" alt="Cuisine" />
+            <img class="activite__item-img" src="/img/frames/Frame-2.png" alt="Cuisine" />
             <p class="activite__item-title">Art</p>
             <p class="activite__item-count">6 members</p>
           </div>

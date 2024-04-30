@@ -3,7 +3,7 @@
     <div class="product-card">
         <div class="product-card__swapper">
             <!-- Product image -->
-            <img src="../assets/img/frames/Frame-1.png" class="img -cover" alt="frame" />
+            <img src="/img/frames/Frame-1.png" class="img -cover" alt="frame" />
             <div class="product-card__detail">
                 <!-- Product details -->
                 <div class="product-card__badge">
@@ -25,12 +25,12 @@
                 <!-- Actions - Buttons: Add to cart and Add to wishlist -->
                 <div class="product-card__actions">
                     <button class="btn -outlined">
-                        <img src="../assets/img/icons/ic_scale.svg" class="img -icon" alt="" />
+                        <img src="/img/icons/ic_scale.svg" class="img -icon" alt="" />
                         Add to cart
                     </button>
 
                     <button class="btn -outlined">
-                        <img src="../assets/img/icons/ic_heart.svg" class="img -icon" alt="" />
+                        <img src="/img/icons/ic_heart.svg" class="img -icon" alt="" />
                         Add to wishlist
                     </button>
                 </div>

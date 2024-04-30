@@ -5,7 +5,7 @@
         <div class="account__search">
           <img
             class="account__search-icon img -icon"
-            src="@/assets/img/icons/ic_search.svg"
+            src="/img/icons/ic_search.svg"
             alt=""
           />
           <input
@@ -21,7 +21,7 @@
             <img
               @click="openModal('notification')"
               class="img -sm"
-              src="@/assets/img/icons/ic_notification.svg"
+              src="/img/icons/ic_notification.svg"
               alt=""
             />
             <CustomModal
@@ -34,7 +34,7 @@
 
           <img
             class="img -md"
-            src="@/assets/img/icons/ic_temp_avatar.svg"
+            src="/img/icons/ic_temp_avatar.svg"
             alt=""
           />
         </div>
