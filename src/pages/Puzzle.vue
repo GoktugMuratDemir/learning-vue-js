@@ -120,7 +120,8 @@ export default {
     };
 
     const revealCard = (card: Card) => {
-      if (card.selected || currentSelection.value.length >= 2) return;
+      if (showTime.value || card.selected || currentSelection.value.length >= 2)
+        return;
       card.selected = true;
       currentSelection.value.push(card);
       if (currentSelection.value.length === 2) {
