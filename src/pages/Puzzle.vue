@@ -24,12 +24,30 @@
   </div>
 </template>
 
-<script>
-import { ref, computed } from "vue";
+<script lang="ts">
+import { ref, computed, Ref } from "vue";
+
+interface Card {
+  value: string;
+  selected: boolean;
+  matched: boolean;
+  error: boolean;
+}
+
+interface ScorePoint {
+  success: number;
+  fail: number;
+}
+
+interface SelectionUpdate {
+  matched?: boolean;
+  selected?: boolean;
+  error?: boolean;
+}
 
 export default {
   setup() {
-    const cards = ref(
+    const cards: Ref<Card[]> = ref(
       ["A", "A", "B", "B"].map((value) => ({
         value,
         selected: false,
@@ -37,18 +55,18 @@ export default {
         error: false,
       }))
     );
-    const score = ref(0);
-    const countdownTimes = ref(2);
-    const gameStarted = ref(false);
-    const showTime = ref(false);
-    const counterText = ref("");
-    const remainingTime = ref(5);
-    const scorePoint = ref({
+    const score: Ref<number> = ref(0);
+    const countdownTimes: Ref<number> = ref(2);
+    const gameStarted: Ref<boolean> = ref(false);
+    const showTime: Ref<boolean> = ref(false);
+    const counterText: Ref<string> = ref("");
+    const remainingTime: Ref<number> = ref(5);
+    const scorePoint: Ref<ScorePoint> = ref({
       success: 10,
       fail: -5,
     });
-    const currentSelection = ref([]);
-    const delay = ref(1000);
+    const currentSelection: Ref<Card[]> = ref([]);
+    const delay: Ref<number> = ref(1000);
 
     const shuffledCards = computed(() => {
       let counter = cards.value.length;
@@ -63,7 +81,7 @@ export default {
       return array;
     });
 
-    const updateScore = (amount) => {
+    const updateScore = (amount: number) => {
       score.value += amount;
     };
 
@@ -101,7 +119,7 @@ export default {
       cards.value = shuffledCards.value;
     };
 
-    const revealCard = (card) => {
+    const revealCard = (card: Card) => {
       if (card.selected || currentSelection.value.length >= 2) return;
       card.selected = true;
       currentSelection.value.push(card);
@@ -112,7 +130,7 @@ export default {
       }
     };
 
-    const failGame = (status) => {
+    const failGame = (status: string) => {
       if (status === "fail") {
         alert("You have failed the game!");
       }
@@ -126,7 +144,7 @@ export default {
       matched = false,
       selected = false,
       error = false,
-    }) => {
+    }: SelectionUpdate) => {
       currentSelection.value.forEach((item) => {
         item.matched = matched;
         item.selected = selected;
