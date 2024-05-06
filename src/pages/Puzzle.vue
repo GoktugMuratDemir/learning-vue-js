@@ -25,33 +25,34 @@
 </template>
 
 <script>
+import { ref, computed } from "vue";
+
 export default {
-  data() {
-    return {
-      cards: ["A", "A", "B", "B"].map((value) => ({
+  setup() {
+    const cards = ref(
+      ["A", "A", "B", "B"].map((value) => ({
         value,
         selected: false,
         matched: false,
         error: false,
-      })),
-      score: 0,
-      countdownTimes: 2,
-      gameStarted: false,
-      showTime: false,
-      counterText: "",
-      remainingTime: 5,
-      scorePoint: {
-        success: 10,
-        fail: -5,
-      },
-      currentSelection: [],
-      delay: 1000,
-    };
-  },
-  computed: {
-    shuffledCards() {
-      let counter = this.cards.length;
-      let array = [...this.cards];
+      }))
+    );
+    const score = ref(0);
+    const countdownTimes = ref(2);
+    const gameStarted = ref(false);
+    const showTime = ref(false);
+    const counterText = ref("");
+    const remainingTime = ref(5);
+    const scorePoint = ref({
+      success: 10,
+      fail: -5,
+    });
+    const currentSelection = ref([]);
+    const delay = ref(1000);
+
+    const shuffledCards = computed(() => {
+      let counter = cards.value.length;
+      let array = [...cards.value];
       while (counter > 0) {
         let index = Math.floor(Math.random() * counter);
         counter--;
@@ -60,55 +61,58 @@ export default {
         array[index] = temp;
       }
       return array;
-    },
-  },
-  methods: {
-    updateScore(amount) {
-      this.score += amount;
-    },
-    startCountDown() {
-      this.showTime = true;
+    });
+
+    const updateScore = (amount) => {
+      score.value += amount;
+    };
+
+    const startCountDown = () => {
+      showTime.value = true;
       let countdown = setTimeout(() => {
-        if (this.countdownTimes === 2) {
-          this.counterText = `The Game Will Start: ${this.remainingTime}`;
+        if (countdownTimes.value === 2) {
+          counterText.value = `The Game Will Start: ${remainingTime.value}`;
         } else {
-          this.showTime = false;
-          this.counterText = `The Time Left: ${this.remainingTime}`;
+          showTime.value = false;
+          counterText.value = `The Time Left: ${remainingTime.value}`;
         }
-        this.remainingTime--;
-        if (this.remainingTime >= 0) {
-          countdown = setTimeout(this.startCountDown, this.delay);
+        remainingTime.value--;
+        if (remainingTime.value >= 0) {
+          countdown = setTimeout(startCountDown, delay.value);
         } else {
-          this.countdownTimes--;
-          if (this.countdownTimes > 0) {
-            if (this.counterText.endsWith("0")) {
-              this.remainingTime = 60;
-              countdown = setTimeout(this.startCountDown, this.delay);
+          countdownTimes.value--;
+          if (countdownTimes.value > 0) {
+            if (counterText.value.endsWith("0")) {
+              remainingTime.value = 60;
+              countdown = setTimeout(startCountDown, delay.value);
             } else {
-              this.counterText = "";
+              counterText.value = "";
             }
           } else {
-            this.failGame("timeout");
+            failGame("timeout");
           }
         }
       }, 0);
-    },
-    gameInit() {
-      this.gameStarted = true;
-      this.startCountDown();
-      this.cards = this.shuffledCards;
-    },
-    revealCard(card) {
-      if (card.selected || this.currentSelection.length >= 2) return;
+    };
+
+    const gameInit = () => {
+      gameStarted.value = true;
+      startCountDown();
+      cards.value = shuffledCards.value;
+    };
+
+    const revealCard = (card) => {
+      if (card.selected || currentSelection.value.length >= 2) return;
       card.selected = true;
-      this.currentSelection.push(card);
-      if (this.currentSelection.length === 2) {
-        this.currentSelection[0].value === this.currentSelection[1].value
-          ? this.success()
-          : this.fail();
+      currentSelection.value.push(card);
+      if (currentSelection.value.length === 2) {
+        currentSelection.value[0].value === currentSelection.value[1].value
+          ? success()
+          : fail();
       }
-    },
-    failGame(status) {
+    };
+
+    const failGame = (status) => {
       if (status === "fail") {
         alert("You have failed the game!");
       }
@@ -116,45 +120,74 @@ export default {
         alert("You have failed the game because of the timeout!");
       }
       location.reload();
-    },
-    updateCurrentSelection({
+    };
+
+    const updateCurrentSelection = ({
       matched = false,
       selected = false,
       error = false,
-    }) {
-      this.currentSelection.forEach((item) => {
+    }) => {
+      currentSelection.value.forEach((item) => {
         item.matched = matched;
         item.selected = selected;
         item.error = error;
       });
-    },
-    resetCurrentSelection() {
-      this.currentSelection = [];
-    },
-    success() {
-      this.updateCurrentSelection({ matched: true, selected: false });
-      this.resetCurrentSelection();
-      this.updateScore(this.scorePoint.success);
-      this.successGame();
-    },
-    fail() {
+    };
+
+    const resetCurrentSelection = () => {
+      currentSelection.value = [];
+    };
+
+    const success = () => {
+      updateCurrentSelection({ matched: true, selected: false });
+      resetCurrentSelection();
+      updateScore(scorePoint.value.success);
+      successGame();
+    };
+
+    const fail = () => {
       setTimeout(() => {
-        this.updateCurrentSelection({ selected: false, error: true });
+        updateCurrentSelection({ selected: false, error: true });
         setTimeout(() => {
-          this.updateCurrentSelection({ error: false });
-          this.resetCurrentSelection();
-        }, this.delay);
-      }, this.delay);
-      this.updateScore(this.scorePoint.fail);
-    },
-    successGame() {
-      if (this.cards.every((card) => card.matched)) {
+          updateCurrentSelection({ error: false });
+          resetCurrentSelection();
+        }, delay.value);
+      }, delay.value);
+      updateScore(scorePoint.value.fail);
+    };
+
+    const successGame = () => {
+      if (cards.value.every((card) => card.matched)) {
         alert(
-          `Congratulations! You have won the game!, Your score is: ${this.score} points `
+          `Congratulations! You have won the game!, Your score is: ${score.value} points `
         );
         location.reload();
       }
-    },
+    };
+
+    return {
+      cards,
+      score,
+      countdownTimes,
+      gameStarted,
+      showTime,
+      counterText,
+      remainingTime,
+      scorePoint,
+      currentSelection,
+      delay,
+      shuffledCards,
+      updateScore,
+      startCountDown,
+      gameInit,
+      revealCard,
+      failGame,
+      updateCurrentSelection,
+      resetCurrentSelection,
+      success,
+      fail,
+      successGame,
+    };
   },
 };
 </script>
