@@ -15,7 +15,7 @@
         }"
         @click="revealCard(card)"
       >
-        <p v-if="card.selected || card.matched">{{ card.value }}</p>
+        <p v-if="showTime || card.selected || card.matched">{{ card.value }}</p>
       </div>
     </div>
     <button class="quitButton" v-if="gameStarted" @click="failGame('fail')">
@@ -37,6 +37,7 @@ export default {
       score: 0,
       countdownTimes: 2,
       gameStarted: false,
+      showTime: false,
       counterText: "",
       remainingTime: 5,
       scorePoint: {
@@ -66,10 +67,12 @@ export default {
       this.score += amount;
     },
     startCountDown() {
+      this.showTime = true;
       let countdown = setTimeout(() => {
         if (this.countdownTimes === 2) {
           this.counterText = `The Game Will Start: ${this.remainingTime}`;
         } else {
+          this.showTime = false;
           this.counterText = `The Time Left: ${this.remainingTime}`;
         }
         this.remainingTime--;
@@ -114,25 +117,32 @@ export default {
       }
       location.reload();
     },
-    success() {
-      this.currentSelection[0].matched = true;
-      this.currentSelection[1].matched = true;
-      this.currentSelection[0].selected = false;
-      this.currentSelection[1].selected = false;
+    updateCurrentSelection({
+      matched = false,
+      selected = false,
+      error = false,
+    }) {
+      this.currentSelection.forEach((item) => {
+        item.matched = matched;
+        item.selected = selected;
+        item.error = error;
+      });
+    },
+    resetCurrentSelection() {
       this.currentSelection = [];
+    },
+    success() {
+      this.updateCurrentSelection({ matched: true, selected: false });
+      this.resetCurrentSelection();
       this.updateScore(this.scorePoint.success);
       this.successGame();
     },
     fail() {
       setTimeout(() => {
-        this.currentSelection[0].selected = false;
-        this.currentSelection[1].selected = false;
-        this.currentSelection[0].error = true;
-        this.currentSelection[1].error = true;
+        this.updateCurrentSelection({ selected: false, error: true });
         setTimeout(() => {
-          this.currentSelection[0].error = false;
-          this.currentSelection[1].error = false;
-          this.currentSelection = [];
+          this.updateCurrentSelection({ error: false });
+          this.resetCurrentSelection();
         }, this.delay);
       }, this.delay);
       this.updateScore(this.scorePoint.fail);
