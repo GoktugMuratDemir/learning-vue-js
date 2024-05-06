@@ -5,6 +5,7 @@ import Login from "../pages/Login.vue";
 import Register from "../pages/Register.vue";
 import AccountList from "../pages/AccountList.vue";
 import ActiviteList from "../pages/ActiviteList.vue";
+import Puzzle from "../pages/Puzzle.vue";
 
 export const routes = [
   {
@@ -31,6 +32,11 @@ export const routes = [
     path: "/product-card-info-ui-design",
     name: "Product Card",
     component: ProductCardInfoUiDesign,
+  },
+  {
+    path: "/puzzle",
+    name: "Puzzle Game",
+    component: Puzzle,
   },
 ];
 

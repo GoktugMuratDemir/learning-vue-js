@@ -50,8 +50,7 @@
             Add Account
           </button>
           <CustomModal v-if="modalType === 'add'" @close="closeModal">
-            <h1>Modal Content</h1>
-            <p>This is some modal content.</p>
+            <AccountAddEditForm />
           </CustomModal>
         </div>
       </div>
@@ -71,8 +70,9 @@
 
 <script lang="ts">
 import { defineComponent, ref, computed } from "vue";
-import AccountItem from "@/sections/AccountItem.vue";
+import AccountItem from "@/sections/Accounts/AccountItem.vue";
 import CustomModal from "@/components/modals/CustomModal.vue";
+import AccountAddEditForm from "@/sections/Accounts/AccountAddEditForm.vue";
 
 interface Account {
   id: number;
@@ -86,6 +86,7 @@ export default defineComponent({
   components: {
     AccountItem,
     CustomModal,
+    AccountAddEditForm
   },
   setup() {
     const searchTerm = ref("");
