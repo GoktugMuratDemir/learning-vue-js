@@ -1,6 +1,6 @@
 <template>
   <div class="game">
-    <button class="startButton" @click="gameInit">Start The Game</button>
+    <button class="startButton" @click="gameInit" v-if="!gameStarted">Start The Game</button>
     <h1 class="counter">{{ counterText }}</h1>
     <div v-if="gameStarted">Score: {{ score }}</div>
     <div class="game-board" v-if="gameStarted">
@@ -48,13 +48,31 @@ interface SelectionUpdate {
 export default {
   setup() {
     const cards: Ref<Card[]> = ref(
-      ["A", "A", "B", "B"].map((value) => ({
+      [
+        "A",
+        "A",
+        "B",
+        "B",
+        "C",
+        "C",
+        "D",
+        "D",
+        "E",
+        "E",
+        "F",
+        "F",
+        "G",
+        "G",
+        "H",
+        "H",
+      ].map((value) => ({
         value,
         selected: false,
         matched: false,
         error: false,
       }))
     );
+
     const score: Ref<number> = ref(0);
     const countdownTimes: Ref<number> = ref(2);
     const gameStarted: Ref<boolean> = ref(false);
@@ -65,6 +83,7 @@ export default {
       success: 10,
       fail: -5,
     });
+
     const currentSelection: Ref<Card[]> = ref([]);
     const delay: Ref<number> = ref(1000);
 
