@@ -9,6 +9,9 @@
         Start The Game
       </button>
     </div>
+    <CustomModal v-if="modalType === 'alert'" @close="closeModal">
+      <h1>modal</h1>
+    </CustomModal>
     <h1 class="text -xxl -semibold">{{ counterText }}</h1>
     <div class="text -lg" v-if="gameStarted">Score: {{ score }}</div>
     <div class="puzzle__board" v-if="gameStarted">
@@ -35,11 +38,14 @@
         Reset Game
       </button>
     </div>
+
+
   </div>
 </template>
 
 <script lang="ts">
-import { ref, computed, Ref } from "vue";
+import { ref, computed, Ref, defineComponent } from "vue";
+import CustomModal from "@/components/modals/CustomModal.vue";
 
 interface Card {
   value: string;
@@ -59,8 +65,12 @@ interface SelectionUpdate {
   error?: boolean;
 }
 
-export default {
+export default defineComponent({
+  components: {
+    CustomModal,
+  },
   setup() {
+    const modalType = ref("");
     const cards: Ref<Card[]> = ref(
       [
         "A",
@@ -100,6 +110,14 @@ export default {
 
     const currentSelection: Ref<Card[]> = ref([]);
     const delay: Ref<number> = ref(1000);
+
+    const openModal = (type: string) => {
+      modalType.value = type;
+    };
+
+    const closeModal = () => {
+      modalType.value = "";
+    };
 
     const shuffledCards = computed(() => {
       let counter = cards.value.length;
@@ -243,7 +261,10 @@ export default {
       success,
       fail,
       successGame,
+      modalType,
+      openModal,
+      closeModal,
     };
   },
-};
+});
 </script>
