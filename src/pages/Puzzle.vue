@@ -159,7 +159,7 @@ export default {
       if (status === "timeout") {
         alert("You have failed the game because of the timeout!");
       }
-      resetGame()
+      resetGame();
     };
 
     const updateCurrentSelection = ({
@@ -201,12 +201,49 @@ export default {
         alert(
           `Congratulations! You have won the game!, Your score is: ${score.value} points `
         );
-        resetGame()
+        resetGame();
       }
     };
 
     const resetGame = () => {
-      // window.location.reload();
+      // Reset all the game state to its initial state
+      cards.value = [
+        "A",
+        "A",
+        "B",
+        "B",
+        // "C",
+        // "C",
+        // "D",
+        // "D",
+        // "E",
+        // "E",
+        // "F",
+        // "F",
+        // "G",
+        // "G",
+        // "H",
+        // "H",
+      ].map((value) => ({
+        value,
+        selected: false,
+        matched: false,
+        error: false,
+      }));
+
+      score.value = 0;
+      countdownTimes.value = 2;
+      gameStarted.value = false;
+      showTime.value = false;
+      counterText.value = "";
+      remainingTime.value = 5;
+      scorePoint.value = {
+        success: 10,
+        fail: -5,
+      };
+
+      currentSelection.value = [];
+      delay.value = 1000;
     };
 
     return {
