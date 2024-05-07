@@ -206,7 +206,7 @@ export default {
     };
 
     const resetGame = () => {
-      window.location.reload();
+      // window.location.reload();
     };
 
     return {
