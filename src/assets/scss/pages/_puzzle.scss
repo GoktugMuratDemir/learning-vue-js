@@ -19,6 +19,7 @@
     @include flex(column, nowrap, center, center);
 
     @include font-size("xl");
+    @include font-weight("semibold");
     line-height: map-get($line-heights, "none");
 
     @include breakpoint("mobile") {
