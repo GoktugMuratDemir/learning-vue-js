@@ -1,0 +1,66 @@
+.puzzle {
+  @include min-height("screen");
+  @include width("full");
+  //   @include p("y", "12");
+  @include bg("selago");
+  @include flex(column, nowrap, center, center);
+  @include gap("6");
+
+  &__board {
+    @include grid(4, "4");
+  }
+
+  &__card {
+    @include width("20");
+    @include height("20");
+    @include p("all", "4");
+    @include shape("6");
+    @include bg("heliotrope");
+    @include flex(column, nowrap, center, center);
+
+    @include font-size("xl");
+    line-height: map-get($line-heights, "none");
+
+    @include breakpoint("mobile") {
+      @include font-size("lg");
+    }
+
+    cursor: pointer;
+    animation: colorChange 5s forwards, fadeIn 1s ease-in-out;
+
+    &.-matched {
+      @include bg("caribbeanGreen");
+      color: black !important;
+    }
+
+    &.-error {
+      @include bg("cinnabar");
+    }
+
+    &.-selected {
+      @include bg("sandybrown");
+      color: black !important;
+    }
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    color: black;
+  }
+  50% {
+    color: black;
+  }
+  100% {
+    color: transparent;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

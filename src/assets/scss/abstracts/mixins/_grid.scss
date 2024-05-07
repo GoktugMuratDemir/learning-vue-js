@@ -1,0 +1,10 @@
+@mixin grid($columns, $gutter) {
+    $gutter-size: map-get($sizes, $gutter);
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    grid-gap: $gutter-size;
+  
+    > * {
+      grid-column: span 1;
+    }
+  }

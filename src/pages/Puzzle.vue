@@ -1,28 +1,40 @@
 <template>
-  <div class="game">
-    <button class="startButton" @click="gameInit" v-if="!gameStarted">
-      Start The Game
-    </button>
-    <h1 class="counter">{{ counterText }}</h1>
-    <div v-if="gameStarted">Score: {{ score }}</div>
-    <div class="game-board" v-if="gameStarted">
+  <div class="puzzle">
+    <div>
+      <button
+        class="btn -contained -caribbeanGreen -lg"
+        @click="gameInit"
+        v-if="!gameStarted"
+      >
+        Start The Game
+      </button>
+    </div>
+    <h1 class="text -xxl -semibold">{{ counterText }}</h1>
+    <div class="text -lg" v-if="gameStarted">Score: {{ score }}</div>
+    <div class="puzzle__board" v-if="gameStarted">
       <div
         v-for="(card, index) in shuffledCards"
         :key="index"
-        class="card"
+        class="puzzle__card"
         :class="{
-          selected: card.selected,
-          matched: card.matched,
-          error: card.error,
+          '-selected': card.selected,
+          '-matched': card.matched,
+          '-error': card.error,
         }"
         @click="revealCard(card)"
       >
         <p v-if="showTime || card.selected || card.matched">{{ card.value }}</p>
       </div>
     </div>
-    <button class="quitButton" v-if="gameStarted" @click="failGame('fail')">
-      Reset Game
-    </button>
+    <div>
+      <button
+        class="btn -contained -cinnabar -md"
+        v-if="gameStarted"
+        @click="failGame('fail')"
+      >
+        Reset Game
+      </button>
+    </div>
   </div>
 </template>
 
@@ -159,7 +171,7 @@ export default {
       if (status === "timeout") {
         alert("You have failed the game because of the timeout!");
       }
-      resetGame()
+      resetGame();
     };
 
     const updateCurrentSelection = ({
@@ -201,7 +213,7 @@ export default {
         alert(
           `Congratulations! You have won the game!, Your score is: ${score.value} points `
         );
-        resetGame()
+        resetGame();
       }
     };
 
@@ -235,159 +247,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.game {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #f8f9fa;
-}
-/**
- * Styles for the game board.
- */
-.game-board {
-  display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-/**
- * Styles for the game cards.
- */
-.card {
-  width: 100px;
-  height: 100px;
-  padding: 8px;
-  border-radius: 24px;
-  background-color: #ccc;
-  display: inline-block;
-  margin: 10px;
-  text-align: center;
-  vertical-align: top;
-  line-height: 100px;
-  font-size: 2em;
-  cursor: pointer;
-  animation: colorChange 5s forwards, fadeIn 1s ease-in-out;
-}
-
-/**
- * Animation keyframes for changing card color.
- */
-@keyframes colorChange {
-  0% {
-    color: black;
-  }
-  50% {
-    color: black;
-  }
-  100% {
-    color: transparent;
-  }
-}
-
-/**
- * Animation keyframes for fading in the card.
- */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-/**
- * Styles for matched cards.
- */
-.matched {
-  background-color: #398439;
-  color: black !important;
-}
-
-/**
- * Styles for error state.
- */
-.error {
-  background-color: #d9534f;
-}
-
-/**
- * Styles for selected cards.
- */
-.selected {
-  background-color: #f0ad4e;
-  color: black !important;
-}
-
-/**
- * Styles for the counter element.
- */
-.counter {
-  font-size: 2em;
-  margin: 10px;
-}
-
-/**
- * Styles for the quit button.
- */
-.quitButton {
-  background-color: #f44336;
-  border: none;
-  color: white;
-  padding: 8px 16px;
-  text-align: center;
-  text-decoration: none;
-  /* display: none; */
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  transition-duration: 0.4s;
-  border-radius: 12px;
-  cursor: pointer;
-  margin-top: 12px;
-}
-
-/**
- * Styles for the start button.
- */
-.startButton {
-  background-color: #4caf50; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 32px;
-  margin: 4px 2px;
-  cursor: pointer;
-  transition-duration: 0.4s;
-  border-radius: 12px;
-}
-
-/**
- * Styles for the start button on hover.
- */
-.startButton:hover {
-  background-color: #45a049;
-}
-
-/**
- * Styles for the score board.
- */
-.score-board {
-  display: none;
-  justify-content: space-between;
-  width: 75%;
-  padding: 10px;
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #ccc;
-}
-</style>

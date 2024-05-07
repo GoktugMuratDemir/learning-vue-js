@@ -30,7 +30,6 @@
     @include p("all", "2");
   }
 
-
   &.-outlined {
     border: 1px solid;
     background-color: transparent;
@@ -66,5 +65,27 @@
       }
     }
   }
+
+  &.-sm {
+    font-size: map-get($font-sizes, "xs");
+    @include p("all", "2");
+
+    @include breakpoint("mobile") {
+      font-size: map-get($font-sizes, "xxs");
+      @include p("all", "2");
+    }
+  }
+
+  &.-lg {
+    font-size: map-get($font-sizes, "lg");
+    @include p("all", "6");
+
+    @include breakpoint("mobile") {
+      font-size: map-get($font-sizes, "md");
+      @include p("all", "8");
+    }
+  }
+
+  
 
 }
