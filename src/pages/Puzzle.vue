@@ -159,7 +159,7 @@ export default {
       if (status === "timeout") {
         alert("You have failed the game because of the timeout!");
       }
-      location.reload();
+      resetGame()
     };
 
     const updateCurrentSelection = ({
@@ -201,8 +201,12 @@ export default {
         alert(
           `Congratulations! You have won the game!, Your score is: ${score.value} points `
         );
-        location.reload();
+        resetGame()
       }
+    };
+
+    const resetGame = () => {
+      window.location.reload();
     };
 
     return {
