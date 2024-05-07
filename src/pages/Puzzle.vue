@@ -1,6 +1,8 @@
 <template>
   <div class="game">
-    <button class="startButton" @click="gameInit" v-if="!gameStarted">Start The Game</button>
+    <button class="startButton" @click="gameInit" v-if="!gameStarted">
+      Start The Game
+    </button>
     <h1 class="counter">{{ counterText }}</h1>
     <div v-if="gameStarted">Score: {{ score }}</div>
     <div class="game-board" v-if="gameStarted">
@@ -106,7 +108,7 @@ export default {
 
     const startCountDown = () => {
       showTime.value = true;
-      let countdown = setTimeout(() => {
+      setTimeout(() => {
         if (countdownTimes.value === 2) {
           counterText.value = `The Game Will Start: ${remainingTime.value}`;
         } else {
@@ -115,13 +117,13 @@ export default {
         }
         remainingTime.value--;
         if (remainingTime.value >= 0) {
-          countdown = setTimeout(startCountDown, delay.value);
+          setTimeout(startCountDown, delay.value);
         } else {
           countdownTimes.value--;
           if (countdownTimes.value > 0) {
             if (counterText.value.endsWith("0")) {
               remainingTime.value = 60;
-              countdown = setTimeout(startCountDown, delay.value);
+              setTimeout(startCountDown, delay.value);
             } else {
               counterText.value = "";
             }
